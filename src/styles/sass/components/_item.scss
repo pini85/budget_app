@@ -1,0 +1,91 @@
+.item {
+
+  &__container {
+    background-color: $color-item-background;
+    width: 50%;
+    height: 80%;
+    padding: 2rem;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: min-content;
+    justify-items: center;
+
+  }
+
+
+  &__date {
+    grid-column: 1/2;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4rem;
+    font-weight: bold;
+  }
+
+  &__name {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4rem;
+    grid-column: 2/3;
+    font-weight: bold;
+
+
+  }
+
+  &__amount {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4rem;
+    grid-column: 3/4;
+    font-weight: bold;
+
+  }
+
+  &__instance {
+    font-size: 1.7rem;
+
+
+  }
+
+  &__time {
+    grid-column: 1/2;
+    font-size: 2rem;
+  }
+
+  &__description {
+    text-transform: capitalize;
+    grid-column: 2/3;
+    font-size: 2rem;
+
+
+  }
+
+  &__value {
+    grid-column: 3/4;
+    display:flex;
+    font-size: 2rem;
+    color: $color-primary;
+
+  }
+
+  &__delete {
+     grid-column: 3/4;
+     margin-left: 2rem;
+     font-size: 2rem;
+
+
+    &--btn {
+      color: $color-display;
+      font-weight: 300;
+
+    }
+
+  }
+}
+
+.red {
+  color: $color-expense;
+}

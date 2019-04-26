@@ -1,0 +1,48 @@
+body {
+  color: $color-display;
+}
+
+.heading-primary {
+  font-size: 7.5rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  color: $color-display-light;
+}
+
+.heading-secondary {
+  font-size: 5rem;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  color: $color-display;
+}
+
+.heading-quaternary {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.green.heading-quaternary::after{
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  left: 1rem;
+  top: 5rem;
+  background-color: green;
+
+}
+
+.red.heading-quaternary::after{
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  left: 1rem;
+  top: 5rem;
+  background-color: red;
+
+}

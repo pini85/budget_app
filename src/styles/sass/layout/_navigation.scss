@@ -1,0 +1,16 @@
+.navigation {
+   grid-row: 3 / 4;
+    grid-column: 1 / -1;
+    background-color: rgba($color-background-dark, 0.5);
+    border-top: 1.5px solid $color-background-dark;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+
+.active {
+   background-color: lighten($color-primary, 5%);
+    transform: translateY(-4px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}

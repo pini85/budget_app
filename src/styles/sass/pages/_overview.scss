@@ -1,0 +1,76 @@
+.overview {
+
+  &__icon {
+    font-size: 5rem;
+      color: $color-display-light;
+
+  }
+
+
+  &__graph {
+
+    height: 50%;
+    width: 50%;
+
+  }
+
+  &__overall {
+    font-size: 4rem;
+    font-weight: 600;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__percentage {
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+
+  }
+
+  &__graph-description {
+    position: relative;
+    right: -14%;
+
+  }
+
+  &__income {
+   font-size: 2rem;
+  font-weight: 300;
+
+}
+
+&__income::before {
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  left: -34%;
+  top: 12%;
+  background-color: rgb(30,135,75);
+
+}
+
+  &__expenses {
+    font-size: 2rem;
+  font-weight: 300;
+  }
+
+  &__expenses::before {
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    left: -34%;
+    top: 61%;
+    background-color: #FF0000;
+
+  }
+}
+
+

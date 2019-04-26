@@ -1,0 +1,41 @@
+.btn {
+    font-size: 1.8rem;
+    background-color: $color-primary;
+    color: $color-display-light;
+    padding: 1rem 2rem;
+    font-weight: 700;
+
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all .2s;
+
+    &--income {
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-1px) !important;
+      }
+    }
+
+    &--expense {
+      cursor: pointer;
+      background-color: $color-expense;
+
+      &:hover {
+        transform: translateY(-1px) !important;
+        background-color: lighten($color-expense, 5%) !important;
+      }
+    }
+
+    &:hover {
+      background-color: lighten($color-primary, 5%);
+      transform: translateY(-4px);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .btn a {
+    color: $color-display-light;
+  }
+
+
