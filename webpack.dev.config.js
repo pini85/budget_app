@@ -4,19 +4,25 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-  entry:  './src/js/controller.js',
+
+  entry: {
+    'main': './src/scripts/controllers/main.js'
+
+  },
+
+
 
   output: {
 
-    filename: 'bundle[contenthash].js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'distt/'),
     publicPath: ''
 
   },
   mode: 'development',
   devServer: {
-    contentBase: path.resolve(__dirname, './distt'),
-        index: 'index.html',
+    contentBase: path.resolve(__dirname, 'distt/'),
+        index: 'add.html',
         port: 9000
 
 
@@ -30,7 +36,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader','sass-loader']
       },
       {
         test: /\.js$/,
@@ -42,11 +48,33 @@ module.exports = {
    },
    plugins: [
 
-    new CleanWebpackPlugin(),
-
     new HtmlWebpackPlugin({
       filename: 'add.html',
-      template: './src/html/add.html'
+      template: './src/add.html'
+     }),
+
+    new HtmlWebpackPlugin({
+      filename: 'expense.html',
+      template: './src/expense.html',
+     }),
+
+    new HtmlWebpackPlugin({
+      filename: 'income.html',
+
+      template: './src/income.html',
+     }),
+
+    new HtmlWebpackPlugin({
+      filename: 'overview.html',
+
+      template: './src/overview.html',
+     }),
+
+    new HtmlWebpackPlugin({
+      filename: 'statistics.html',
+
+      template: './src/statistics.html',
      })
+
    ]
 };

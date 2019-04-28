@@ -2,12 +2,19 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require("webpack");
+const autoprefixer = require('autoprefixer');
+
 
 
 module.exports = {
   entry: {
-    'main': './src/scripts/controller.js'
+    'main': './src/scripts/controllers/main.js',
+
+
   },
+
 
   output: {
 
@@ -21,13 +28,14 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [  MiniCssExtractPlugin.loader, 'css-loader']
+        use: [  MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
 
       },
       {
-        test: /\.scss$/,
-        use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        test: /\.s?css$/,
+        use: [ MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       },
+
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -40,15 +48,41 @@ module.exports = {
 
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css',
-      chunks: ['css']
+    }),
+
+    new webpack.LoaderOptionsPlugin( {
+      options: {
+        postcss: [
+          autoprefixer()
+        ]
+      }
     }),
 
     new CleanWebpackPlugin(),
 
     new HtmlWebpackPlugin({
       filename: 'add.html',
-      chunks: ['main'],
       template: './src/add.html'
+     }),
+
+    new HtmlWebpackPlugin({
+      filename: 'expense.html',
+      template: './src/expense.html'
+     }),
+
+    new HtmlWebpackPlugin({
+      filename: 'income.html',
+      template: './src/income.html'
+     }),
+
+    new HtmlWebpackPlugin({
+      filename: 'overview.html',
+      template: './src/overview.html'
+     }),
+
+    new HtmlWebpackPlugin({
+      filename: 'statistics.html',
+      template: './src/statistics.html'
      })
 
    ]

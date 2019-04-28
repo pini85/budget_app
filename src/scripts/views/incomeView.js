@@ -1,10 +1,11 @@
 export const displayIncome = (id, date, description, value) => {
+
   const markup = `
            <div class="item" href="#${id}">
-            <div class="<it></it>em__time">
+            <div class= "item__date">
               ${date}
             </div>
-            <div class="item__description" id="inc-0">
+            <div class="item__description">
               ${description}
             </div>
             <div class="item__value">
@@ -16,4 +17,5 @@ export const displayIncome = (id, date, description, value) => {
             </div>
         `;
   document.querySelector('.btn').insertAdjacentHTML('afterend', markup);
+
 };
