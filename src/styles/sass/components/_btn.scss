@@ -32,6 +32,18 @@
       transform: translateY(-4px);
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     }
+
+    &--dark-green {
+      background-color: $color-primary-dark;
+
+      &:hover {
+        background-color: lighten($color-primary-dark, 5%);
+      }
+    }
+
+    &--light-green {
+      background-color: #9bb69f;
+    }
   }
 
   .btn a {

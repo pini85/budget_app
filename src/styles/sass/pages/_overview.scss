@@ -21,6 +21,16 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    &--green {
+      color: $color-primary;
+
+    }
+
+    &--red {
+      color: $color-expense;
+
+    }
   }
 
   &__percentage {
@@ -31,13 +41,28 @@
     top: 60%;
     transform: translate(-50%, -50%);
 
+    &--green {
+      color: $color-primary-light;
+
+    }
+
+    &--red {
+      color: $color-expense-light;
+
+    }
+
   }
+
 
   &__graph-description {
+    display: inline-block;
     position: relative;
-    right: -14%;
+    right: -5vw;
+    down: 7px;
+    bottom: -31vh;
+}
 
-  }
+
 
   &__income {
    font-size: 2rem;
@@ -70,6 +95,11 @@
     top: 61%;
     background-color: #FF0000;
 
+  }
+
+  &__no-value {
+    font-size: 4rem;
+    font-weight: lighter;
   }
 }
 

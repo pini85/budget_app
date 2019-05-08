@@ -1,0 +1,29 @@
+.statistics {
+
+  &__notice {
+    height: 48.9vh;
+    display: flex;
+    align-items: center;
+
+    &-text {
+      font-size: 3rem;
+      text-align: center;
+      font-weight: 300;
+    }
+  }
+
+  &__display {
+    background-color: $color-item-background;
+    height: 50vh;
+    width: 100vw;
+    margin-bottom: 5vh;
+
+  }
+  &__options {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50vw;
+
+  }
+}
+

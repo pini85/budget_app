@@ -3,6 +3,11 @@ import * as localStorage from '../data/localStorage.js'
 export const displayValue = () => {
   const value = localStorage.totalValue();
   document.querySelector('.overview__overall').innerHTML = value + '$';
+  if(value > 0) {
+    document.querySelector('.overview__overall').classList.add('overview__overall--green')
+  } else {
+    document.querySelector('.overview__overall').classList.add('overview__overall--red')
+  }
 };
 
 export const displayDoughnut = () => {
@@ -29,67 +34,38 @@ export const displayDoughnut = () => {
     },
 
   });
+ } else {
+  const markup = `
+    <div class = "overview__no-value"> No incomes or expenses detected. Please add some!</div>
+
+     <div class="btn btn--dark-green ul-margin-top-big js-random">Random data</div>
+
+    `
+    document.querySelector('.container__body').insertAdjacentHTML('beforeend', markup);
+    document.querySelector('.chart-container').style.display ='none';
+    document.querySelector('.overview__percentage').style.display ='none';
+    document.querySelector('.overview__overall').style.display ='none';
+
+
  }
 }
+export const percentageTotal = () => {
+  const income = localStorage.total('income');
+  const expense = localStorage.total('expense');
+  if(income > expense && expense > 0) {
+   const result = Math.round((income / expense) * 100);
+   const markup = `
+   <div class="overview__percentage overview__percentage--green">+${result}%</div>
+   `;
+    document.querySelector('.overview__percentage').innerHTML = markup;
+  } else if(income < expense && income > 0) {
+     const result = Math.round((expense / income) * 100);
+     const markup = `
+     <div class="overview__percentage overview__percentage--red">-${result}%</div>
+     `;
+    document.querySelector('.overview__percentage').innerHTML = markup;
 
-
-
-//  <canvas id="myChart" width="400" height="400"></canvas>
-// <script>
-// var ctx = document.getElementById("myChart");
-// var myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-//         datasets: [{
-//             label: '# of Votes',
-//             data: [12, 19, 3  , 5, 2, 3],
-//             backgroundColor: [
-//                 'black',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'red',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-//             borderWidth: 10
-//         }]
-//     },
-
-//     options: {
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero:true
-//                 }
-//             }]
-//         }
-//     }
-// });
-// </script>
-// document.querySelector('.navigation__overview').classList.add('active');
-
-// document.querySelector('.navigation__addItem').addEventListener('mouseover', () => {
-//   document.querySelector('.navigation__overview').classList.toggle('active');
-// });
-// document.querySelector('.navigation__addItem').addEventListener('mouseout', () => {
-//   document.querySelector('.navigation__overview').classList.add('active');
-// });
-
-// document.querySelector('.navigation__statistics').addEventListener('mouseover', () => {
-//   document.querySelector('.navigation__overview').classList.remove('active');
-// });
-// document.querySelector('.navigation__statistics').addEventListener('mouseout', () => {
-//   document.querySelector('.navigation__overview').classList.add('active');
-// });
-
-// console.log('overview');
-// }
+  } else {
+    console.log('hi');
+  }
+}

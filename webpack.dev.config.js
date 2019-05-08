@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DashboardPlugin = require("webpack-dashboard/plugin");
 
 
 module.exports = {
@@ -22,7 +23,7 @@ module.exports = {
   mode: 'development',
   devServer: {
     contentBase: path.resolve(__dirname, 'distt/'),
-        index: 'add.html',
+        index: 'index.html',
         port: 9000
 
 
@@ -47,6 +48,13 @@ module.exports = {
       ]
    },
    plugins: [
+
+    new DashboardPlugin(),
+
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './src/index.html'
+     }),
 
     new HtmlWebpackPlugin({
       filename: 'add.html',
@@ -74,7 +82,13 @@ module.exports = {
       filename: 'statistics.html',
 
       template: './src/statistics.html',
+     }),
+    new HtmlWebpackPlugin({
+      filename: 'future-features.html',
+
+      template: './src/future-features.html',
      })
+
 
    ]
 };

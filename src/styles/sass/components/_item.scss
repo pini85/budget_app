@@ -1,45 +1,61 @@
 .item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr min-content;
+  justify-items: center;
+  grid-row-gap: 1rem;
 
   &__container {
     background-color: $color-item-background;
     width: 50%;
-    height: 80%;
+    max-height: 54vh;
+    overflow: auto;
     padding: 2rem;
     overflow: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: min-content;
-    justify-items: center;
+
+    &-description {
+      background-color: $color-item-background;
+      display: grid;
+      align-content: center;
+      grid-template-columns: 1fr 1fr 1fr min-content;
+      grid-template-rows: min-content;
+      justify-items: center;
+      grid-row-gap: 1rem;
+      width: 50%;
+      height: 7vh;
+      border-bottom: 1px solid rgba(0,0,0,.1);
+      padding: 2rem;
+
+    }
 
   }
 
 
   &__date {
     grid-column: 1/2;
+    align-self: center;
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 4rem;
     font-weight: bold;
   }
 
   &__name {
+    grid-column: 2/3;
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 4rem;
-    grid-column: 2/3;
+    align-self: center;
     font-weight: bold;
 
 
   }
 
   &__amount {
+    grid-column: 3/4;
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 4rem;
-    grid-column: 3/4;
+    align-self: center;
     font-weight: bold;
 
   }
@@ -68,18 +84,29 @@
     display:flex;
     font-size: 2rem;
     color: $color-primary;
+    margin-left: 2rem;
 
+    &--red {
+      color: $color-expense;
+    }
   }
 
   &__delete {
-     grid-column: 3/4;
-     margin-left: 2rem;
+     grid-column: 4/4;
      font-size: 2rem;
 
 
     &--btn {
       color: $color-display;
       font-weight: 300;
+      transition: all .2s;
+       cursor: pointer;
+
+
+      &:hover {
+        transform: scale(1.2) rotate(120deg);
+
+      }
 
     }
 

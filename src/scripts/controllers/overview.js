@@ -5,5 +5,7 @@ if (document.querySelector('body').className === 'overview') {
 
   overviewView.displayValue();
   overviewView.displayDoughnut();
+  overviewView.percentageTotal();
+
 
 }

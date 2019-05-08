@@ -1,11 +1,11 @@
 
 export const getDescriptionIncome = () => document.querySelector('.js-income-description').value;
 
-export const getValueIncome = () => document.querySelector('.js-income-value').value;
+export const getValueIncome = () => parseFloat(document.querySelector('.js-income-value').value);
 
 export const getDescriptionExpense = () => document.querySelector('.js-expense-description').value;
 
-export const getValueExpense = () => document.querySelector('.js-expense-value').value;
+export const getValueExpense = () => parseFloat(document.querySelector('.js-expense-value').value);
 
 export const animationIncome = () => {
 

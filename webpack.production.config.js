@@ -20,7 +20,7 @@ module.exports = {
 
     filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, 'distt/'),
-    publicPath: ''
+    publicPath:''
 
   },
   mode: 'production',
@@ -61,28 +61,41 @@ module.exports = {
     new CleanWebpackPlugin(),
 
     new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './src/index.html'
+     }),
+
+   new HtmlWebpackPlugin({
       filename: 'add.html',
       template: './src/add.html'
      }),
 
     new HtmlWebpackPlugin({
       filename: 'expense.html',
-      template: './src/expense.html'
+      template: './src/expense.html',
      }),
 
     new HtmlWebpackPlugin({
       filename: 'income.html',
-      template: './src/income.html'
+
+      template: './src/income.html',
      }),
 
     new HtmlWebpackPlugin({
       filename: 'overview.html',
-      template: './src/overview.html'
+
+      template: './src/overview.html',
      }),
 
     new HtmlWebpackPlugin({
       filename: 'statistics.html',
-      template: './src/statistics.html'
+
+      template: './src/statistics.html',
+     }),
+    new HtmlWebpackPlugin({
+      filename: 'future-features.html',
+
+      template: './src/future-features.html',
      })
 
    ]

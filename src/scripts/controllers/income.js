@@ -1,4 +1,9 @@
-import { displayIncome } from '<div class=""></div>./views/incomeView.js';
+import * as incomeView from '../views/incomeView.js';
 
 
-displayIncome(newBudget.id, newBudget.date, newBudget.description, newBudget.value);
+
+if (document.querySelector('body').className === 'income') {
+  incomeView.displayIncome('income');
+  incomeView.randomData();
+  incomeView.deleteItem();
+}

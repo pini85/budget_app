@@ -8,13 +8,29 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   </head>
-  <body>
+  <body class="statistics">
     <div class="container">
       <header class="header">
         <h1 class="heading-primary">statistics</h1>
       </header>
-      <div class="container__body">
-      BODY
+      <div class="container__body--statistics">
+        <div class="statistics__notice">
+          <div class="statistics__notice-text">
+          Please select a timeline. If you don't have that much data you can generate random data as well.
+          </div>
+        </div>
+
+
+          <div class="chart-container" style="position: relative; width: 56vh; margin-bottom: 5vh; margin-top:5vh; display: -webkit-inline-box;">
+          </div>
+        <div class="btn ul-margin-bottom-big">
+          Random data
+        </div>
+        <div class="statistics__options">
+          <div class="btn btn--dark-green js-weekly">Weekly</div>
+          <div class="btn btn--dark-green js-monthly">Monthly</div>
+          <div class="btn btn--dark-green js-yearly">Yearly</div>
+        </div>
       </div>
      <nav class="navigation">
         <div class="btn navigation__addItem">
