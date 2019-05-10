@@ -11,6 +11,16 @@ export const persistData = (budget, type) => {
     the value with the getItem variable.
     */
 
+export const read = (type) => {
+  const data = JSON.parse(localStorage.getItem(type));
+  return data;
+}
+
+export const exsist = (type) => {
+  const data = localStorage.getItem(type);
+  return data;
+}
+
 export const total = (type) => {
     const data = JSON.parse(localStorage.getItem(type))
     let totalSum = 0
@@ -36,12 +46,16 @@ export const total = (type) => {
 export const totalValue = () => {
    const income = total('income');
    const expense = total('expense');
-   const totalValue = income - expense;
+   const randomIncome = total('random-income');
+   const randomExpense = total('random-expense');
+   const totalValue = `${randomIncome > 0 || randomExpense > 0 ? (income + randomIncome) - (expense + randomExpense) : income - expense }`;
+   console.log(totalValue)
+   // `${randomIncome > 0 ? income + randomIncome : income}`, `${randomExpense > 0 ? expense + randomExpense : expense}`
    return totalValue;
 
 }
 
-export const deleteItemLocalStorage = (type,id) => {
+export const deleteItem= (type,id) => {
   if(localStorage.getItem(type)) {
     let data = JSON.parse(localStorage.getItem(type));
     data.forEach( el => {

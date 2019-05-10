@@ -14,12 +14,15 @@ export const displayDoughnut = () => {
   const ctx = document.getElementById('myChart').getContext('2d');
   const income = localStorage.total('income');
   const expense = localStorage.total('expense');
-  if(income > 0 || expense > 0) {
+  const randomIncome = localStorage.total('random-income');
+  const randomExpense = localStorage.total('random-expense');
+  if(income > 0 || expense > 0 || randomIncome > 0 || randomExepense > 0) {
+    console.log(randomExpense,randomIncome)
   const myDoughnutChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
       datasets: [{
-        data: [income, expense],
+        data: [`${randomIncome > 0 ? income + randomIncome : income}`, `${randomExpense > 0 ? expense + randomExpense : expense}`],
 
         backgroundColor: [
           'rgb(30,135,75)',
@@ -52,14 +55,16 @@ export const displayDoughnut = () => {
 export const percentageTotal = () => {
   const income = localStorage.total('income');
   const expense = localStorage.total('expense');
+  const randomIncome = localStorage.total('random-income');
+  const randomExpense = localStorage.total('random-expense');
   if(income > expense && expense > 0) {
-   const result = Math.round((income / expense) * 100);
+   const result = Math.round((income + randomIncome) / (expense + randomExpense) * 100);
    const markup = `
    <div class="overview__percentage overview__percentage--green">+${result}%</div>
    `;
     document.querySelector('.overview__percentage').innerHTML = markup;
   } else if(income < expense && income > 0) {
-     const result = Math.round((expense / income) * 100);
+     const result = Math.round(((expense + randomExpense) / (income + randomIncome)) * 100);
      const markup = `
      <div class="overview__percentage overview__percentage--red">-${result}%</div>
      `;

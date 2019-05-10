@@ -1,55 +1,15 @@
-
-import {deleteItemLocalStorage} from '../data/localStorage.js';
+import * as localStorage from '../data/localStorage.js';
 import * as faker from '../data/random.js';
 
-export const randomData = () => {
-  const data = faker.random();
-  const income = data.income;
-  // const date = income[0].date.split(' ');
-  // const test = date[2];
-  // console.log(test);
 
-  //Compare year
-  //Compare month
-  //Compare day
-  //Put in front the most recent date in a new array
-  // iterate over the new array
+const dom = (type) => {
+    const data = localStorage.read(type);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  document.querySelector('.js-random').addEventListener('click',() => {
-
-    income.forEach(el => {
+    data.forEach(el => {
 
      const markup = `
      <div class = "item" id= "${el.id}">
-     <div class="item__time">
+      <div class="item__time">
           ${el.date}
         </div>
         <div class="item__description">
@@ -58,77 +18,48 @@ export const randomData = () => {
         <div class="item__value">
          +${el.value}
         </div>
-        <div class= "item__delete">
+
+        <div class= ${type === 'income' ? '" item__delete item__delete-user"' : '"item__delete item__delete-random"'}>
           <div class="item__delete--btn"><i class="far fa-trash-alt"></i>
           </div>
         </div>
-      </div>
+     </div>
     `;
-      document.querySelector('.item__container').insertAdjacentHTML('beforeend', markup);
-
-    });
-    const nodes = document.querySelectorAll('.item__delete');
-  nodes.forEach(el => {
-    el.addEventListener('click',() => {
-      const id = parseInt(el.parentNode.id);
-      const btn = document.querySelector('.item__delete');
-      if (btn) {
-        //remove from UI
-       el.parentNode.parentNode.removeChild(el.parentNode);
-
-      }
-
-    });
-  });
-
-    });
-
-
-
-}
-
-
-export const displayIncome = (type) => {
-  if(localStorage.getItem(type)){
-    const data = JSON.parse(localStorage.getItem(type));
-
-
-    data.forEach(el => {
-
-         const markup = `
-         <div class = "item" id= "${el.id}">
-        <div class="item__time">
-              ${el.date}
-            </div>
-            <div class="item__description">
-               ${el.description}
-            </div>
-            <div class="item__value">
-             +${el.value}
-            </div>
-            <div class= "item__delete">
-              <div class="item__delete--btn"><i class="far fa-trash-alt"></i>
-              </div>
-            </div>
-          </div>
-        `;
     document.querySelector('.item__container').insertAdjacentHTML('beforeend', markup);
-
 
     });
   }
+
+export const displayIncome = () => {
+  //user data
+  if(localStorage.exsist('income')){
+    dom('income')
+  }
+  //random data
+   if(localStorage.exsist('random-income')){
+   dom('random-income');
+  }
+   document.querySelector('.js-random').addEventListener('click',() => {
+    faker.income();
+    dom('random-income');
+    location.reload();// need to reload page so we can find the dom and then delete it.
+
+  });
 }
-export const deleteItem = () => {
-  const nodes = document.querySelectorAll('.item__delete');
+export const deleteItem = (type) => {
+
+  const nodes = document.querySelectorAll(`${type === 'income' ? '.item__delete-user' : '.item__delete-random' }`);
   nodes.forEach(el => {
+    const id = parseInt(el.parentNode.id);
     el.addEventListener('click',() => {
-      const id = parseInt(el.parentNode.id);
-      const btn = document.querySelector('.item__delete');
-      if (btn) {
-        //remove from UI
-       el.parentNode.parentNode.removeChild(el.parentNode);
-       //Remove from Local storage
-        deleteItemLocalStorage('income',id);
+      if(type === 'income'){
+        const btn = document.querySelector('.item__delete-user');
+        el.parentNode.parentNode.removeChild(el.parentNode);
+        localStorage.deleteItem(type,id);
+      }else if(type === 'random-income') {
+        const btn = document.querySelector('item__delete-random')
+        el.parentNode.parentNode.removeChild(el.parentNode);
+        localStorage.deleteItem(type,id);
       }
 
     });
