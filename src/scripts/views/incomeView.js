@@ -3,14 +3,28 @@ import * as faker from '../data/random.js';
 
 
 const dom = (type) => {
-    const data = localStorage.read(type);
+  const data = localStorage.read(type);
+  data.sort(function compare(a, b) {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateA - dateB;
+  });
 
     data.forEach(el => {
+  //uncomment selections to change the numbers into string months.
+  // const monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const string = JSON.stringify(el.date);
+  const split = string.split('-')
+  const year = split[0][1] + split[0][2] + split[0][3] + split[0][4];
+  // const month = monthName[parseInt(split[1]) - 1];
+  const month = split[1];
+  const day = split[2][0] + split[2][1];
+  const date = `${day} ${month} ${year}`;
 
      const markup = `
      <div class = "item" id= "${el.id}">
       <div class="item__time">
-          ${el.date}
+          ${date}
         </div>
         <div class="item__description">
            ${el.description}
@@ -20,7 +34,7 @@ const dom = (type) => {
         </div>
 
         <div class= ${type === 'income' ? '" item__delete item__delete-user"' : '"item__delete item__delete-random"'}>
-          <div class="item__delete--btn"><i class="far fa-trash-alt"></i>
+          <div class="item__delete-btn"><i class="far fa-trash-alt"></i>
           </div>
         </div>
      </div>
@@ -39,13 +53,44 @@ export const displayIncome = () => {
    if(localStorage.exsist('random-income')){
    dom('random-income');
   }
-   document.querySelector('.js-random').addEventListener('click',() => {
+
+  if(localStorage.exsist('income') || localStorage.exsist('random-income')){
+    document.querySelector('.js-random').addEventListener('click',() => {
+    console.log('hi');
     faker.income();
     dom('random-income');
     location.reload();// need to reload page so we can find the dom and then delete it.
 
   });
+
+  } else {
+     document.querySelector('.js-random').addEventListener('click',() => {
+    console.log('hi');
+    faker.income();
+    dom('random-income');
+    location.reload();// need to reload page so we can find the dom and then delete it.
+
+  });
+    document.querySelector('.item__container-description').style.display = 'none';
+    document.querySelector('.item__container').style.display = 'none';
+    document.querySelector('.item__delete-all').style.display = 'none';
+    // document.querySelector('.item__options').style.display = 'none';
+
+
+    const markup = `
+    <div class = "overview__no-value"> No incomes or expenses detected. Please add some!</div>
+     `;
+
+     document.querySelector('.container__body').insertAdjacentHTML('afterbegin', markup)
+
+  }
+
 }
+
+
+
+
+
 export const deleteItem = (type) => {
 
   const nodes = document.querySelectorAll(`${type === 'income' ? '.item__delete-user' : '.item__delete-random' }`);
@@ -66,11 +111,13 @@ export const deleteItem = (type) => {
   });
 }
 
-function shuffle(a) {
-    for (let i = a.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-
-    }
-    return a;
+export const deleteAll = () => {
+  const target = document.querySelector('.item__container');
+  target.parentNode.  removeChild(target);
+   localStorage.deleteAll('income');
+   localStorage.deleteAll('random-income');
+   location.reload();
 }
+
+
+

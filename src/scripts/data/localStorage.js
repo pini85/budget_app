@@ -69,3 +69,7 @@ export const deleteItem= (type,id) => {
     });
   }
 };
+
+export const deleteAll = (type) => {
+   localStorage.removeItem(type);
+}

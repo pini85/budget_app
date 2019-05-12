@@ -1,4 +1,5 @@
-import * as localStorage from '../data/localStorage.js'
+import * as localStorage from '../data/localStorage.js';
+import * as faker from '../data/random.js';
 
 export const displayValue = () => {
   const value = localStorage.totalValue();
@@ -16,8 +17,9 @@ export const displayDoughnut = () => {
   const expense = localStorage.total('expense');
   const randomIncome = localStorage.total('random-income');
   const randomExpense = localStorage.total('random-expense');
-  if(income > 0 || expense > 0 || randomIncome > 0 || randomExepense > 0) {
-    console.log(randomExpense,randomIncome)
+  if(income > 0 || expense > 0 || randomIncome > 0 || randomExpense > 0) {
+  document.querySelector('.overview__options').style.display ='none';
+
   const myDoughnutChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
@@ -41,17 +43,22 @@ export const displayDoughnut = () => {
   const markup = `
     <div class = "overview__no-value"> No incomes or expenses detected. Please add some!</div>
 
-     <div class="btn btn--dark-green ul-margin-top-big js-random">Random data</div>
-
     `
-    document.querySelector('.container__body').insertAdjacentHTML('beforeend', markup);
+    document.querySelector('.container__body').insertAdjacentHTML('afterbegin', markup);
     document.querySelector('.chart-container').style.display ='none';
     document.querySelector('.overview__percentage').style.display ='none';
     document.querySelector('.overview__overall').style.display ='none';
+    document.querySelector('.overview__options').style.visibility ='visible';
+    document.querySelector('.js-random').addEventListener('click',() => {
+    faker.income();
+    faker.expense();
+    location.reload();// need to reload page so we can find the dom and then delete it.
+  });
 
 
  }
 }
+
 export const percentageTotal = () => {
   const income = localStorage.total('income');
   const expense = localStorage.total('expense');

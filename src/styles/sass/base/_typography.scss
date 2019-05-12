@@ -20,6 +20,16 @@ body {
   color: $color-display;
 }
 
+.heading-tertiary {
+   font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  color: $color-display;
+
+}
+
 .heading-quaternary {
   font-size: 2rem;
   font-weight: 300;

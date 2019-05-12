@@ -91,28 +91,48 @@
     }
   }
 
+  &__options {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+  }
+
+  &__delete-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__delete {
      grid-column: 4/4;
      font-size: 2rem;
 
 
-    &--btn {
+    &-btn {
       color: $color-display;
       font-weight: 300;
       transition: all .2s;
        cursor: pointer;
-
 
       &:hover {
         transform: scale(1.2) rotate(120deg);
 
       }
 
+    &--big {
+      font-size: 4rem;
+      color: $color-primary-dark;
+
+      &:hover {
+        color: lighten($color-primary-dark, 5%);
+
+      }
+    }
+
     }
 
   }
 }
-
 .red {
   color: $color-expense;
 }

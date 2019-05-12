@@ -43,7 +43,8 @@ const controlBudgetIncome = () => {
 
     newBudget.idIncome();
 
-    newBudget.calculateDate();
+    // newBudget.calculateDate();
+    //We need to modify the date only after we sorted the data.
 
     newBudget.modifyValue();
 
@@ -67,7 +68,7 @@ const controlBudgetExpense = () => {
 
     newBudget.idExpense();
 
-    newBudget.calculateDate();
+    // newBudget.calculateDate();
 
     newBudget.modifyValue();
 
