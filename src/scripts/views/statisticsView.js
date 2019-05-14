@@ -25,6 +25,8 @@ const removeCharts = (el1, el2) => {
 
 
 }
+
+
 var ctx = document.getElementById("myChart-weekly");
 
 var myChart = new Chart(ctx, {
