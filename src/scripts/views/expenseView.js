@@ -27,8 +27,8 @@ const dom = (type) => {
         <div class="item__description">
            ${el.description}
         </div>
-        <div class="item__value">
-         +${el.value}
+        <div class="item__value item__value--red">
+         -${el.value}
         </div>
 
         <div class= ${type === 'expense' ? '" item__delete item__delete-user"' : '"item__delete item__delete-random"'}>
