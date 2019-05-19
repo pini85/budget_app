@@ -16,10 +16,15 @@ export const read = (type) => {
   return data;
 }
 
-export const exsist = (type) => {
-  const data = localStorage.getItem(type);
-  return data;
+export const length = (type) => {
+  if( JSON.parse(localStorage.getItem(type))){
+  const data = JSON.parse(localStorage.getItem(type)).length;
+   return data
+  } else {
+    return 0
+  }
 }
+
 
 export const total = (type) => {
     const data = JSON.parse(localStorage.getItem(type))
@@ -33,10 +38,7 @@ export const total = (type) => {
       const value = data[i].value.replace(/,/, '');
       const integer = parseInt(value);
       totalSum+= integer;
-
-
     }
-
 
   }
   return totalSum;

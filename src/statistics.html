@@ -15,7 +15,7 @@
       </header>
       <div class="container__body--statistics">
         <div class="statistics__notice">
-          <div class="statistics__notice-text">
+          <div class="statistics__notice-text js-notice">
           Please select a timeline. If you don't have that much data you can generate random data as well.
           </div>
         </div>
@@ -23,9 +23,25 @@
 
           <div class="chart-container" style="position: relative; width: 56vh; margin-bottom: 5vh; margin-top:5vh; display: -webkit-inline-box;">
           </div>
-        <div class="btn ul-margin-bottom-big">
-          Random data
-        </div>
+           <div class="item__options">
+          <div class="btn btn--dark-green ul-margin-top-medium ul-margin-bottom-small js-random">Random data</div>
+          <select class = "random-dropdown ul-margin-top-medium ul-margin-bottom-small">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="500">500</option>
+
+          </select>
+          </div>
+
         <div class="statistics__options">
           <div class="btn btn--dark-green js-weekly">Weekly</div>
           <div class="btn btn--dark-green js-monthly">Monthly</div>

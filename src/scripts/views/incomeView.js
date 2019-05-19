@@ -5,8 +5,8 @@ import * as faker from '../data/random.js';
 const dom = (type) => {
   const data = localStorage.read(type);
   data.sort(function compare(a, b) {
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
+    const dateA = new Date(b.date);
+    const dateB = new Date(a.date);
     return dateA - dateB;
   });
 
@@ -46,15 +46,15 @@ const dom = (type) => {
 
 export const displayIncome = () => {
   //user data
-  if(localStorage.exsist('income')){
+  if(localStorage.read('income')){
     dom('income')
   }
   //random data
-   if(localStorage.exsist('random-income')){
+   if(localStorage.read('random-income')){
    dom('random-income');
   }
 
-  if(localStorage.exsist('income') || localStorage.exsist('random-income')){
+  if(localStorage.read('income') || localStorage.read('random-income')){
     document.querySelector('.js-random').addEventListener('click',() => {
     console.log('hi');
     faker.income();
@@ -78,7 +78,7 @@ export const displayIncome = () => {
 
 
     const markup = `
-    <div class = "overview__no-value"> No incomes or expenses detected. Please add some!</div>
+    <div class = "overview__no-value"> No incomes detected. Please add some!</div>
      `;
 
      document.querySelector('.container__body').insertAdjacentHTML('afterbegin', markup)

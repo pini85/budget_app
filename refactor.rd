@@ -12,16 +12,15 @@ Overview bugs % !!!!!
 Statistics(weekly,monthly,yearly) !!!!!!
 
 TODO:
-Save all random data to local storage;
-modify the dom to always have the newest date first.
+Save all random data to local storage;!!!!!!!
+modify the dom to always have the newest date first.!!!!!!!!!!!!!
 
-overview display current month.
+overview display current month.!!!!!!
 
-dispaly - sign on expenses and red
+dispaly - sign on expenses and red!!!!!!!
 
 
 format nav icons ahref etc
-API DATA
 Alert at start -- Best viewed in mobile,work in progress,present link blog, random data or your own.
 
 ------------------------
@@ -36,5 +35,5 @@ same to month.
 
 if there is no data display the same message when clicked on weekly monthly yearly.
 
-
+refactor all the variables into one in each function like so :const blld,glglf,vlflf,fkfkf;
 

@@ -1,4 +1,20 @@
-import * as localStorage from '../data/localStorage.js';
+import * as local from '../data/localStorage.js';
+
+
+export const notice = () => {
+  const income = local.length('income');
+  const randomIncome = local.length('random-income');
+  const expense = local.length('expense');
+  const randomExpense = local.length('random-expense');
+  if(income < 100 || randomIncome < 100 || expense < 100 || randomExpense < 100){
+    document.querySelector('.js-notice').innerHTML = `You have only ${income + randomIncome}
+    income items and ${expense + randomExpense} expense items. I recommend at least 100 items of each to get a better feel of the statistics!`;
+  } else {
+    document.querySelector('.js-notice').innerHTML = 'The more data the happier I am!'
+
+  }
+
+}
 
 const removeNotice = () => {
    if(document.querySelector('.statistics__notice')){
@@ -15,8 +31,12 @@ const removeCharts = (el1, el2) => {
 }
 
 const value = (obj) => {
-  if(obj){
-    let totalSum = []
+  let totalSum = [];
+  if(obj === undefined || obj.length === 0){
+    totalSum = 0;
+    return totalSum;
+
+ } else if(obj) {
 
   const length = obj.length;
   for(let i = 0; i < length; i++){
@@ -24,20 +44,14 @@ const value = (obj) => {
     const integer = parseInt(value).toFixed(2);
     totalSum+=integer;
   }
-
   return parseInt(totalSum);
-
-
-} else {
-  let totalSum = 10;
-  return parseInt(totalSum)
-  }
+ }
 }
 //FIX THE ELSE STATMENT IF OBJ DOES NOT EXSIST IT WONT GIVE IT 0 FOR YEARLY AT LEAST
 const yearlyData = (type,year) => {
-  if(localStorage.read(type)){
+  if(local.read(type)){
   const result = [];
-  const data = localStorage.read(type);
+  const data = local.read(type);
   data.map(el => {
     const d = new Date();
     const thisYear = d.getYear() - year;
@@ -51,8 +65,6 @@ const yearlyData = (type,year) => {
   }
 }
 
-const test = value(yearlyData('income',1));
-console.log(test);
 
 export const yearly = () => {
    removeNotice();
@@ -116,9 +128,9 @@ var myChart = new Chart(ctx, {
 
 
 const monthlyData = (type, month) => {
-  if(localStorage.read(type)){
+  if(local.read(type)){
     const result = [];
-    const data = localStorage.read(type);
+    const data = local.read(type);
     data.map(el => {
 
       const d = new Date();
@@ -211,8 +223,8 @@ var myChart = new Chart(ctx, {
 
 
 const day = (type, day) => {
-  if(localStorage.read(type)){
-  const data = localStorage.read(type);
+  if(local.read(type)){
+  const data = local.read(type);
   const pastSevenDays = [];
   const result = [];
 
