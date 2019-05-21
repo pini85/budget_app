@@ -1,4 +1,5 @@
 import * as local from '../data/localStorage.js';
+import * as faker from '../data/random.js';
 
 
 export const notice = () => {
@@ -6,13 +7,24 @@ export const notice = () => {
   const randomIncome = local.length('random-income');
   const expense = local.length('expense');
   const randomExpense = local.length('random-expense');
-  if(income < 100 || randomIncome < 100 || expense < 100 || randomExpense < 100){
+  if((income < 100 && randomIncome < 100) && (expense < 100 && randomExpense < 100)){
     document.querySelector('.js-notice').innerHTML = `You have only ${income + randomIncome}
     income items and ${expense + randomExpense} expense items. I recommend at least 100 items of each to get a better feel of the statistics!`;
   } else {
     document.querySelector('.js-notice').innerHTML = 'The more data the happier I am!'
 
   }
+
+}
+
+    export const random = () => {
+      // if(local.read('income') || local.read('random-income')){
+        faker.income();
+        faker.expense();
+        location.reload();
+
+
+
 
 }
 
@@ -30,6 +42,8 @@ const removeCharts = (el1, el2) => {
    }
 }
 
+
+
 const value = (obj) => {
   let totalSum = [];
   if(obj === undefined || obj.length === 0){
@@ -37,17 +51,15 @@ const value = (obj) => {
     return totalSum;
 
  } else if(obj) {
+   let totalSum = 0;
+        obj.forEach(el => {
+          totalSum+= (parseFloat(el.value));
 
-  const length = obj.length;
-  for(let i = 0; i < length; i++){
-    const value = obj[i].value.replace(/,/, '');
-    const integer = parseInt(value).toFixed(2);
-    totalSum+=integer;
+        })
+        return totalSum;
   }
-  return parseInt(totalSum);
- }
 }
-//FIX THE ELSE STATMENT IF OBJ DOES NOT EXSIST IT WONT GIVE IT 0 FOR YEARLY AT LEAST
+
 const yearlyData = (type,year) => {
   if(local.read(type)){
   const result = [];
@@ -59,6 +71,7 @@ const yearlyData = (type,year) => {
     const dataYear = dataDate.getYear();
     if(thisYear === dataYear){
       result.push(el);
+
     }
   });
   return result

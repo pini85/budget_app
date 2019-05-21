@@ -87,6 +87,11 @@ module.exports = {
       filename: 'future-features.html',
 
       template: './src/future-features.html',
+     }),
+    new HtmlWebpackPlugin({
+      filename: 'test.html',
+
+      template: './src/test.html',
      })
 
 

@@ -46,7 +46,7 @@ const controlBudgetIncome = () => {
     // newBudget.calculateDate();
     //We need to modify the date only after we sorted the data.
 
-    newBudget.modifyValue();
+    parseInt(newBudget.modifyValue());
 
     localStorage.persistData(newBudget, 'income');
 
