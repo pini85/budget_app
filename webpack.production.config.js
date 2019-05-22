@@ -19,8 +19,8 @@ module.exports = {
   output: {
 
     filename: 'bundle.[contenthash].js',
-    path: path.resolve(__dirname, 'distt/'),
-    publicPath:'https://my-amazing-budget-app.netlify.com/'
+    path: path.resolve(__dirname, 'distt/')
+
 
   },
   mode: 'production',
