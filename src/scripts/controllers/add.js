@@ -1,12 +1,7 @@
+import Budget from '../models/Budget.js';
+import * as addView from '../views/addView.js';
+import * as localStorage from '../data/localStorage.js';
 
-
-const state = {
-  inc: [],
-  exp: [],
-};
-
-
-// Add Controller//
 const controlBudgetIncome = () => {
   // Get params from UI
   const description = addView.getDescriptionIncome();

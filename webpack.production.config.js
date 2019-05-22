@@ -10,7 +10,7 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: {
-    'main': './src/scripts/controllers/index.js',
+     'main': './src/scripts/index.js'
 
 
   },
