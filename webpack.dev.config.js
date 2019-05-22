@@ -7,7 +7,7 @@ const DashboardPlugin = require("webpack-dashboard/plugin");
 module.exports = {
 
   entry: {
-    'main': './src/scripts/controllers/main.js'
+    'main': './src/scripts/controllers/index.js'
 
   },
 

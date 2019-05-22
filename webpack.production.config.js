@@ -10,7 +10,7 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: {
-    'main': './src/scripts/controllers/main.js',
+    'main': './src/scripts/controllers/index.js',
 
 
   },
@@ -19,8 +19,8 @@ module.exports = {
   output: {
 
     filename: 'bundle.[contenthash].js',
-    path: path.resolve(__dirname, 'distt/')
-
+    path: path.resolve(__dirname, 'distt/'),
+    publicPath:'https://my-amazing-budget-app.netlify.com/'
 
   },
   mode: 'production',
