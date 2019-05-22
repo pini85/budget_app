@@ -19,13 +19,9 @@ export const notice = () => {
 
     export const random = () => {
       // if(local.read('income') || local.read('random-income')){
-        faker.income();
-        faker.expense();
+        faker.income('2016-01-01');
+        faker.expense('2016-01-01');
         location.reload();
-
-
-
-
 }
 
 const removeNotice = () => {
@@ -306,7 +302,7 @@ var myChart = new Chart(ctx, {
         labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"],
         datasets: [{
           //0 = sunday. We start the beginnnig of the week on sunday.
-            label: '# of Votes',
+            label: 'Weekly income',
             data: [(value(day('income',0)) + value(day('random-income',0))) - (value(day('expense',0)) + value(day('random-expense',0))),
                    (value(day('income',1)) + value(day('random-income',1))) - (value(day('expense',1)) + value(day('random-expense',1))),
                    (value(day('income',2)) + value(day('random-income',2))) - (value(day('expense',2)) + value(day('random-expense',2))),

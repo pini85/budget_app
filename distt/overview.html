@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-  <link href="style.db8248c8d5cd3dbacfb1.css" rel="stylesheet"></head>
+  <link href="style.67f5ed9d3d5113804586.css" rel="stylesheet"></head>
   <body class="overview">
     <div class="container">
       <header class="header">
@@ -16,16 +16,47 @@
        <!--  <i class="overview__icon fas fa-hand-holding-usd"></i> -->
       </header>
       <div class="container__body">
+        <h2 class="heading-secondary js-month"></h2>
+
         <div class="chart-container" style="position: relative; width:75vh; display: -webkit-inline-box;">
           <canvas id="myChart" width="400" height="350"></canvas>
           <div class="overview__overall"> </div>
-          <div class="overview__percentage">+22%</div>
-          <div class="overview__graph-description">
-          <h4 class="overview__income">Income</h4>
-          <h4 class="overview__expenses">Expenses</h4>
+          <div class="overview__percentage"></div>
+          <div class="overview__options">
+              <div class="btn btn--dark-green ul-margin-top-medium ul-margin-bottom-small js-random">Random data
+              </div>
+          <select class = "random-dropdown ul-margin-top-medium ul-margin-bottom-small">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
         </div>
+      </div>
+      <div class="overview__options js-with-no-chart">
+              <div class="btn btn--dark-green ul-margin-top-medium ul-margin-bottom-small js-random">Random data
+              </div>
+          <select class = "random-dropdown ul-margin-top-medium ul-margin-bottom-small">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
         </div>
-
       </div>
       <nav class="navigation">
         <div class="btn navigation__addItem">
@@ -45,7 +76,7 @@
         </div>
       </nav>
       </div>
-  <script type="text/javascript" src="bundle.f1423f3050139bb2829f.js"></script></body>
+  <script type="text/javascript" src="bundle.21bc3360afde1e3a27a5.js"></script></body>
 </html>
 
 

@@ -3,7 +3,7 @@ var faker = require('faker');
 const date = new Date();
 
 
-export const income = () => {
+export const income = (startDate) => {
 var element = document.querySelector(".random-dropdown").value;
 
 //income data faker
@@ -11,20 +11,22 @@ var element = document.querySelector(".random-dropdown").value;
     localStorage.persistData({
       "description": `${i < (element/2) ? `Sold ${faker.commerce.product()}` : `${faker.name.jobType()} salary`}` ,
       "value": faker.commerce.price(),
-      "date": faker.date.between('2016-01-01', new Date()),
+      "date": faker.date.between(startDate, new Date()),
       "id": faker.random.number()},"random-income");
   }
 }
-export const expense = () => {
+export const expense = (startDate) => {
   var element = document.querySelector(".random-dropdown").value;
   for(let i= 0; i< element; i++) {
   localStorage.persistData({
     "description": `${i < (element/2) ? `Bought ${faker.commerce.product()}` : `${faker.name.jobType()} fee`}` ,
     "value": faker.commerce.price(),
-    "date": faker.date.between('2016-01-01',  new Date()),
+     "date": faker.date.between(startDate, new Date()),
     "id": faker.random.number()}, "random-expense");
   }
 }
+
+
 
 
 

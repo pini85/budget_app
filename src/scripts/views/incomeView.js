@@ -46,6 +46,7 @@ const dom = (type) => {
   });
 
     data.forEach(el => {
+      console.table(el);
       const date = modifyDate(el.date)
       const description = modifyDescription(el.description);
 
@@ -87,7 +88,7 @@ export const displayIncome = () => {
 
   if(local.read('income') || local.read('random-income')){
     document.querySelector('.js-random').addEventListener('click',() => {
-    faker.income();
+    faker.income('2016-01-01');
     dom('random-income');
     location.reload();// need to reload page so we can find the dom and then delete it.
 
@@ -96,7 +97,7 @@ export const displayIncome = () => {
   } else {
      document.querySelector('.js-random').addEventListener('click',() => {
     console.log('hi');
-    faker.income();
+    faker.income('2016-01-01');
     dom('random-income');
     location.reload();// need to reload page so we can find the dom and then delete it.
 
