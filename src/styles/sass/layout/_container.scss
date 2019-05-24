@@ -1,4 +1,6 @@
 
+
+
 .container {
   display: grid;
   height: 100vh;
@@ -8,11 +10,8 @@
   background-color: $color-background;
 
   @include respond(phone) {
-    @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm){
-       .selector:not(*:root), .chrome .ff { height: calc(100vh - 56px); }
-       }
+    min-height: calc(100vh - 56px);
   }
-
 
   &--income {
     display: grid;

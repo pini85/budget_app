@@ -652,6 +652,9 @@ body {
   grid-template-rows: 10vh 1fr 10vh;
   grid-template-columns: repeat(3, 1fr);
   background-color: #fbfefc; }
+  @media only screen and (max-width: 37.5em) {
+    .container {
+      min-height: calc(100vh - 56px); } }
   .container--income {
     display: grid;
     height: 100vh;
