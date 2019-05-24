@@ -9,9 +9,9 @@
   grid-template-columns: repeat(3, 1fr);
   background-color: $color-background;
 
-  // @include respond(phone) {
-  //   max-height: calc(100vh - 56px);
-  // }
+  @include respond(phone) {
+    max-height: calc(100vh - 56px);
+  }
 
   &--income {
     display: grid;
