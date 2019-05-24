@@ -616,10 +616,10 @@ body {
 .chart-container {
   padding: 0 5rem;
   position: relative;
-  width: 56vh;
-  margin-bottom: 5vh;
-  margin-top: 5vh;
-  display: -webkit-inline-box; }
+  width: 80vh; }
+  @media only screen and (max-width: 37.5em) {
+    .chart-container {
+      width: 56vh; } }
 
 .navigation {
   grid-row: 3 / 4;
@@ -652,9 +652,6 @@ body {
   grid-template-rows: 10vh 1fr 10vh;
   grid-template-columns: repeat(3, 1fr);
   background-color: #fbfefc; }
-  @media only screen and (max-width: 37.5em) {
-    .container {
-      max-height: calc(100vh - 56px); } }
   .container--income {
     display: grid;
     height: 100vh;

@@ -1,10 +1,10 @@
 .chart-container {
     padding: 0 5rem;
     position: relative; 
-    width: 56vh;
-    margin-bottom: 5vh; 
-    margin-top:5vh;
-    display: -webkit-inline-box;
+    width: 80vh;
 
-   
+    @include respond(phone) {
+      width: 56vh;
+    }
+
   }
