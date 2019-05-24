@@ -1,11 +1,11 @@
 
-import * as add from '../controllers/add.js'
-import * as overView from '../controllers/overview.js'
-import * as income from '../controllers/income.js'
-import * as expense from '../controllers/expense.js'
-import * as stats from '../controllers/statistics.js'
+import * as add from '../controllers/add.js';
+import * as overView from '../controllers/overview.js';
+import * as income from '../controllers/income.js';
+import * as expense from '../controllers/expense.js';
+import * as stats from '../controllers/statistics.js';
 
-require ('../../styles/sass/main.scss')
+require('../../styles/sass/main.scss');
 
 
 // // localStorage.setItem('x', document.querySelector('.item__container').innerHTML);
@@ -80,7 +80,6 @@ require ('../../styles/sass/main.scss')
 // };
 
 
-
 // // add.html//
 
 // if (document.querySelector('body').className === 'add') {
@@ -99,5 +98,3 @@ require ('../../styles/sass/main.scss')
 //     });
 //   }
 // }
-
-

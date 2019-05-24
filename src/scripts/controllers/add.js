@@ -15,7 +15,7 @@ const controlBudgetIncome = () => {
     newBudget.idIncome();
 
     // newBudget.calculateDate();
-    //We need to modify the date only after we sorted the data.
+    // We need to modify the date only after we sorted the data.
 
     parseInt(newBudget.modifyValue());
 
@@ -52,7 +52,6 @@ const controlBudgetExpense = () => {
 };
 
 
-
 // add.html//
 
 if (document.querySelector('body').className === 'add') {
@@ -71,5 +70,3 @@ if (document.querySelector('body').className === 'add') {
     });
   }
 }
-
-

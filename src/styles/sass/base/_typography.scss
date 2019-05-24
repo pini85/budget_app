@@ -9,6 +9,11 @@ body {
   letter-spacing: .5rem;
   text-transform: uppercase;
   color: $color-display-light;
+
+  @include respond(tab-land) {
+    font-size: 5.5rem;
+  }
+  
 }
 
 .heading-secondary {

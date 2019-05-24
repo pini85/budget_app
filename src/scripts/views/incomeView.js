@@ -2,58 +2,50 @@ import * as local from '../data/localStorage.js';
 import * as faker from '../data/random.js';
 
 
-
 const modifyDate = (el) => {
-  //uncomment selections to change the numbers into string months.
+  // uncomment selections to change the numbers into string months.
   // const monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-   const string = JSON.stringify(el);
-  const split = string.split('-')
+  const string = JSON.stringify(el);
+  const split = string.split('-');
   const year = split[0][1] + split[0][2] + split[0][3] + split[0][4];
   // const month = monthName[parseInt(split[1]) - 1];
   const month = split[1];
   const day = split[2][0] + split[2][1];
   const date = `${day} ${month} ${year}`;
   return date;
-}
+};
 
 const modifyDescription = (title, limit = 18) => {
-  if(title.length > limit) {
+  if (title.length > limit) {
     const newDescription = [];
     title.split('').reduce((accumulator, currentWord) => {
-      // console.log(currentWord)
-      if(accumulator  < limit) {
+      if (accumulator < limit) {
         newDescription.push(currentWord);
       }
 
-      return accumulator + currentWord.length
-      //we need to update the accumulator by returning a value.
-
-      },0)
-     console.log(newDescription)
-  return `${newDescription.join('')}...`;
-  } else {
-    return title;
+      return accumulator + currentWord.length;
+      // we need to update the accumulator by returning a value.
+    }, 0);
+    return `${newDescription.join('')}...`;
   }
-}
+  return title;
+};
 
 
 const dom = (type) => {
   const data = local.read(type);
-  data.sort(function compare(a, b) {
+  data.sort((a, b) => {
     const dateA = new Date(b.date);
     const dateB = new Date(a.date);
     return dateA - dateB;
   });
 
-    data.forEach(el => {
-      console.table(el);
-      const date = modifyDate(el.date)
-      const description = modifyDescription(el.description);
+  data.forEach((el) => {
+    const date = modifyDate(el.date);
+    const description = modifyDescription(el.description);
 
 
-
-
-     const markup = `
+    const markup = `
      <div class = "item" id= "${el.id}">
       <div class="item__time">
           ${date}
@@ -72,36 +64,59 @@ const dom = (type) => {
      </div>
     `;
     document.querySelector('.item__container').insertAdjacentHTML('beforeend', markup);
-
-    });
-  }
+  });
+};
 
 export const displayIncome = () => {
-  //user data
-  if(local.read('income')){
-    dom('income')
+  // user data
+  if (local.read('income')) {
+    dom('income');
   }
   // random data
-   if(local.read('random-income')){
-   dom('random-income');
+  if (local.read('random-income')) {
+    dom('random-income');
   }
 
-  if(local.read('income') || local.read('random-income')){
-    document.querySelector('.js-random').addEventListener('click',() => {
-    faker.income('2016-01-01');
-    dom('random-income');
-    location.reload();// need to reload page so we can find the dom and then delete it.
+  if (local.read('income') || local.read('random-income')) {
+    document.querySelector('.js-random').addEventListener('click', () => {
+      // const getData = new Promise((resolve, reject) => {
+      //   const data = faker.income('2016-01-01');
+      //   resolve(data);
+      //   reject('error!');
+      // });
 
-  });
+      // const data = async () => {
+      //   const data = await getData();
+      //   return data;
+      // };
+      // data().then(result => console.log(result));
 
+
+      faker.income('2016-01-01');
+      dom('random-income');
+      location.reload();// need to reload page so we can find the dom and then delete it.
+    });
   } else {
-     document.querySelector('.js-random').addEventListener('click',() => {
-    console.log('hi');
-    faker.income('2016-01-01');
-    dom('random-income');
-    location.reload();// need to reload page so we can find the dom and then delete it.
+    document.querySelector('.js-random').addEventListener('click', () => {
+      // const getData = () => new Promise((resolve, reject) => {
+      //   const data = faker.income('2016-01-01');
+      //   resolve(data);
+      //   reject('error!');
+      // });
 
-  });
+      // const data = async () => {
+      //   const data = await getData();
+      //   return data;
+      // };
+
+      // data().then(result => console.log(result));
+
+      // It is still taking blocking the gui because i am async
+
+      faker.income('2016-01-01');
+      dom('random-income');
+      location.reload();// need to reload page so we can find the dom and then delete it.
+    });
     document.querySelector('.item__container-description').style.display = 'none';
     document.querySelector('.item__container').style.display = 'none';
     document.querySelector('.item__delete-all').style.display = 'none';
@@ -112,43 +127,49 @@ export const displayIncome = () => {
     <div class = "overview__no-value"> No incomes detected. Please add some!</div>
      `;
 
-     document.querySelector('.container__body').insertAdjacentHTML('afterbegin', markup)
-
+    document.querySelector('.container__body').insertAdjacentHTML('afterbegin', markup);
   }
-
-}
-
-
-
+};
 
 
 export const deleteItem = (type) => {
-
-  const nodes = document.querySelectorAll(`${type === 'income' ? '.item__delete-user' : '.item__delete-random' }`);
-  nodes.forEach(el => {
+  const nodes = document.querySelectorAll(`${type === 'income' ? '.item__delete-user' : '.item__delete-random'}`);
+  nodes.forEach((el) => {
     const id = parseInt(el.parentNode.id);
-    el.addEventListener('click',() => {
-      if(type === 'income'){
+    el.addEventListener('click', () => {
+      if (type === 'income') {
         const btn = document.querySelector('.item__delete-user');
         el.parentNode.parentNode.removeChild(el.parentNode);
-        local.deleteItem(type,id);
-      }else if(type === 'random-income') {
-        const btn = document.querySelector('item__delete-random')
+        local.deleteItem(type, id);
+      } else if (type === 'random-income') {
+        const btn = document.querySelector('item__delete-random');
         el.parentNode.parentNode.removeChild(el.parentNode);
-        local.deleteItem(type,id);
+        local.deleteItem(type, id);
       }
-
     });
   });
-}
+};
 
 export const deleteAll = () => {
   const target = document.querySelector('.item__container');
-  target.parentNode.  removeChild(target);
-   local.deleteAll('income');
-   local.deleteAll('random-income');
-   location.reload();
-}
+  target.parentNode.removeChild(target);
+  local.deleteAll('income');
+  local.deleteAll('random-income');
+  location.reload();
+};
 
 
+// const x = () => {
+//   return new Promise((resolve, reject) => {
+//         const data = faker.income('2016-01-01')
+//         resolve(data);
+//   });
+// }
 
+//   const data =  async() => {
+//   const data = await x();
+//         return data
+//       }
+
+
+// data().then(result => console.log(result));

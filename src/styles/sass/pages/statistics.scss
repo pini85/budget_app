@@ -24,6 +24,14 @@
     justify-content: space-evenly;
     width: 50vw;
 
+    @include respond(tab-land) {
+      width: 60vw
+    }
+
+    @include respond(tab-port) {
+      width: 100vw
+    }
+
   }
 }
 

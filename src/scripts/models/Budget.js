@@ -13,7 +13,6 @@ export default class Budget {
   idIncome() {
     // get last element of the local storage array and get the id value and incremeent it by 1.
     if (typeof localStorage.income === 'undefined') {
-
       this.id = 0;
     } else {
       this.id = JSON.parse(localStorage.income).slice(-1)[0].id + 1;
@@ -25,7 +24,6 @@ export default class Budget {
   idExpense() {
     // get last element of the local storage array and get the id value and incremeent it by 1.
     if (typeof localStorage.expense === 'undefined') {
-
       this.id = 0;
     } else {
       this.id = JSON.parse(localStorage.expense).slice(-1)[0].id + 1;
@@ -33,7 +31,6 @@ export default class Budget {
       // [0] selects the array.
     }
   }
-
 
 
   calculateDate() {
@@ -51,27 +48,27 @@ export default class Budget {
   modifyValue() {
     console.log(this.value);
     const thisValue = this.value.toFixed(2);
-    console.log(thisValue)
+    console.log(thisValue);
 
-    //value.00
+    // value.00
     const numSplit = thisValue.split('.');
-  //   //["value", "00"]
+    //   //["value", "00"]
 
     const integer = numSplit[0];
     // console.log(integer);
     // console.log(numSplit[1]);
 
-    if(integer.length > 6 ) {
-      this.value = integer.substr(0, integer.length - 6) + ',' + integer.substr(integer.length - 6, 3) + ',' + integer.substr(integer.length -3,3) + '.' + numSplit[1];
-console.log(this.value);
-    } else if(integer.length > 3) {
-      this.value  = integer.substr(0, integer.length - 3) + ',' + integer.substr(integer.length - 3,3) + '.' + numSplit[1];
+    if (integer.length > 6) {
+      this.value = `${integer.substr(0, integer.length - 6)},${integer.substr(integer.length - 6, 3)},${integer.substr(integer.length - 3, 3)}.${numSplit[1]}`;
       console.log(this.value);
-    } else if(integer.length > 1) {
-      this.value  = integer.substr(0, integer.length - 2)  + integer.substr(integer.length - 2,2) + '.' + numSplit[1];
+    } else if (integer.length > 3) {
+      this.value = `${integer.substr(0, integer.length - 3)},${integer.substr(integer.length - 3, 3)}.${numSplit[1]}`;
       console.log(this.value);
-    } else if(integer.length > 0) {
-      this.value  = integer.substr(0, integer.length - 1)  + integer.substr(integer.length - 1,1) + '.' + numSplit[1];
+    } else if (integer.length > 1) {
+      this.value = `${integer.substr(0, integer.length - 2) + integer.substr(integer.length - 2, 2)}.${numSplit[1]}`;
+      console.log(this.value);
+    } else if (integer.length > 0) {
+      this.value = `${integer.substr(0, integer.length - 1) + integer.substr(integer.length - 1, 1)}.${numSplit[1]}`;
       console.log(this.value);
     }
   }

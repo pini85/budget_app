@@ -1,7 +1,18 @@
+
 body {
   background-color: #edfbf3;
   font-family: 'Lato', sans-serif;
   color: $color-display;
+}
+
+html {
+
+  @include respond(phone) {
+    font-size: 43%;
+  }
+  @include respond(phone-small) {
+    font-size: 37%; // 1rem = 12, 12/16 = 75%
+  }
 }
 
 

@@ -4,22 +4,22 @@ import * as faker from '../data/random.js';
 
 const dom = (type) => {
   const data = localStorage.read(type);
-  data.sort(function compare(a, b) {
+  data.sort((a, b) => {
     const dateA = new Date(b.date);
     const dateB = new Date(a.date);
     return dateA - dateB;
   });
 
-    data.forEach(el => {
-  const string = JSON.stringify(el.date);
-  const split = string.split('-')
-  const year = split[0][1] + split[0][2] + split[0][3] + split[0][4];
-  // const month = monthName[parseInt(split[1]) - 1];
-  const month = split[1];
-  const day = split[2][0] + split[2][1];
-  const date = `${day} ${month} ${year}`;
+  data.forEach((el) => {
+    const string = JSON.stringify(el.date);
+    const split = string.split('-');
+    const year = split[0][1] + split[0][2] + split[0][3] + split[0][4];
+    // const month = monthName[parseInt(split[1]) - 1];
+    const month = split[1];
+    const day = split[2][0] + split[2][1];
+    const date = `${day} ${month} ${year}`;
 
-     const markup = `
+    const markup = `
      <div class = "item" id= "${el.id}">
       <div class="item__time">
           ${date}
@@ -38,36 +38,32 @@ const dom = (type) => {
      </div>
     `;
     document.querySelector('.item__container').insertAdjacentHTML('beforeend', markup);
-
-    });
-  }
+  });
+};
 
 export const displayExpense = () => {
-  //user data
-  if(localStorage.read('expense')){
-    dom('expense')
+  // user data
+  if (localStorage.read('expense')) {
+    dom('expense');
   }
-  //random data
-   if(localStorage.read('random-expense')){
-   dom('random-expense');
-  }
-
-  if(localStorage.read('expense') || localStorage.read('random-expense')){
-    document.querySelector('.js-random').addEventListener('click',() => {
-    faker.expense('2016-01-01');
+  // random data
+  if (localStorage.read('random-expense')) {
     dom('random-expense');
-    location.reload();// need to reload page so we can find the dom and then delete it.
+  }
 
-  });
-
+  if (localStorage.read('expense') || localStorage.read('random-expense')) {
+    document.querySelector('.js-random').addEventListener('click', () => {
+      faker.expense('2016-01-01');
+      dom('random-expense');
+      location.reload();// need to reload page so we can find the dom and then delete it.
+    });
   } else {
-     document.querySelector('.js-random').addEventListener('click',() => {
-    console.log('hi');
-    faker.expense('2016-01-01');
-    dom('random-expense');
-    location.reload();// need to reload page so we can find the dom and then delete it.
-
-  });
+    document.querySelector('.js-random').addEventListener('click', () => {
+      console.log('hi');
+      faker.expense('2016-01-01');
+      dom('random-expense');
+      location.reload();// need to reload page so we can find the dom and then delete it.
+    });
     document.querySelector('.item__container-description').style.display = 'none';
     document.querySelector('.item__container').style.display = 'none';
     document.querySelector('.item__delete-all').style.display = 'none';
@@ -78,40 +74,33 @@ export const displayExpense = () => {
     <div class = "overview__no-value"> No expenses detected. Please add some!</div>
      `;
 
-     document.querySelector('.container__body').insertAdjacentHTML('afterbegin', markup)
-
+    document.querySelector('.container__body').insertAdjacentHTML('afterbegin', markup);
   }
-
-}
-
-
-
+};
 
 
 export const deleteItem = (type) => {
-
-  const nodes = document.querySelectorAll(`${type === 'expense' ? '.item__delete-user' : '.item__delete-random' }`);
-  nodes.forEach(el => {
+  const nodes = document.querySelectorAll(`${type === 'expense' ? '.item__delete-user' : '.item__delete-random'}`);
+  nodes.forEach((el) => {
     const id = parseInt(el.parentNode.id);
-    el.addEventListener('click',() => {
-      if(type === 'expense'){
+    el.addEventListener('click', () => {
+      if (type === 'expense') {
         const btn = document.querySelector('.item__delete-user');
         el.parentNode.parentNode.removeChild(el.parentNode);
-        localStorage.deleteItem(type,id);
-      }else if(type === 'random-expense') {
-        const btn = document.querySelector('item__delete-random')
+        localStorage.deleteItem(type, id);
+      } else if (type === 'random-expense') {
+        const btn = document.querySelector('item__delete-random');
         el.parentNode.parentNode.removeChild(el.parentNode);
-        localStorage.deleteItem(type,id);
+        localStorage.deleteItem(type, id);
       }
-
     });
   });
-}
+};
 
 export const deleteAll = () => {
   const target = document.querySelector('.item__container');
-  target.parentNode.  removeChild(target);
-   localStorage.deleteAll('expense');
-   localStorage.deleteAll('random-expense');
-   location.reload();
-}
+  target.parentNode.removeChild(target);
+  localStorage.deleteAll('expense');
+  localStorage.deleteAll('random-expense');
+  location.reload();
+};

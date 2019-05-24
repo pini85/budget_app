@@ -8,8 +8,7 @@ export const getDescriptionExpense = () => document.querySelector('.js-expense-d
 export const getValueExpense = () => parseFloat(document.querySelector('.js-expense-value').value);
 
 export const animationIncome = () => {
-
-document.querySelector('.message-income').classList.add('add__message');
+  document.querySelector('.message-income').classList.add('add__message');
 
   setTimeout(() => {
     document.querySelector('.message-income').classList.remove('add__message');
@@ -59,7 +58,7 @@ export const clearFieldsExpense = () => {
 // console.log(x);
 
 // const test = [1,2,3,4,5];
-const test2 =[5,1,0];
+const test2 = [5, 1, 0];
 
 // // const result = test2[0].includes(1);
 // // console.log(result);
@@ -81,7 +80,6 @@ const data = JSON.parse(localStorage.getItem('income'));
 //   return finalArray;
 
 // }
-
 
 
 // const compare = (arr1,arr2) => {
@@ -109,4 +107,3 @@ const data = JSON.parse(localStorage.getItem('income'));
 // });
 
 // console.log(x);
-

@@ -42,3 +42,5 @@ if there is no data display the same message when clicked on weekly monthly year
 refactor all the variables into one in each function like so :const blld,glglf,vlflf,fkfkf;
 
 format nav icons ahref etc
+
+formatting the controllers having too many functions to call
