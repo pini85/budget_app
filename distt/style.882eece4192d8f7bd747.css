@@ -357,6 +357,17 @@ template {
   display: none;
 }
 
+/*
+352px: extra small phone
+400px : small phone
+0-600px: phone
+600-900px: tab-port
+900-1200px: tab-land
+[1200-1800]: is where our normal styles apply
+1800px > : big-desktop
+
+ORDER: base + typography > general layout + grid > page layout > components
+*/
 @-webkit-keyframes scale-down {
   from {
     -webkit-transform: scale(1);
@@ -381,6 +392,14 @@ body {
   font-family: 'Lato', sans-serif;
   color: #0c341d; }
 
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 43%; } }
+
+@media only screen and (max-width: 25em) {
+  html {
+    font-size: 37%; } }
+
 body {
   color: #0c341d; }
 
@@ -391,6 +410,9 @@ body {
   letter-spacing: .5rem;
   text-transform: uppercase;
   color: #edfbf3; }
+  @media only screen and (max-width: 75em) {
+    .heading-primary {
+      font-size: 5.5rem; } }
 
 .heading-secondary {
   font-size: 5rem;
@@ -498,6 +520,9 @@ body {
     overflow: auto;
     padding: 2rem;
     overflow: auto; }
+    @media only screen and (max-width: 75em) {
+      .item__container {
+        width: 100%; } }
     .item__container-description {
       background-color: #f8faf9;
       display: grid;
@@ -512,6 +537,9 @@ body {
       height: 7vh;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       padding: 2rem; }
+      @media only screen and (max-width: 75em) {
+        .item__container-description {
+          width: 100%; } }
   .item__date {
     grid-column: 1/2;
     align-self: center;
@@ -584,6 +612,14 @@ body {
   color: #1e874b;
   background-color: #f8faf9;
   border: 1px solid #1e874b; }
+
+.chart-container {
+  padding: 0 5rem;
+  position: relative;
+  width: 56vh;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  display: -webkit-inline-box; }
 
 .navigation {
   grid-row: 3 / 4;
@@ -787,6 +823,12 @@ body {
   display: flex;
   justify-content: space-evenly;
   width: 50vw; }
+  @media only screen and (max-width: 75em) {
+    .statistics__options {
+      width: 60vw; } }
+  @media only screen and (max-width: 56.25em) {
+    .statistics__options {
+      width: 100vw; } }
 
 body {
   height: 100vh;
