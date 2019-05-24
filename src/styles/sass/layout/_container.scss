@@ -1,3 +1,4 @@
+
 .container {
   display: grid;
   height: 100vh;
@@ -6,11 +7,12 @@
   grid-template-columns: repeat(3, 1fr);
   background-color: $color-background;
 
-  @supports (-webkit-appearance:none) {
-    .os-android & {
-      min-height: calc(100vh - 56px);
-    }
+  @include respond(phone) {
+    @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm){
+       .selector:not(*:root), .chrome .ff { height: calc(100vh - 56px); }
+       }
   }
+
 
   &--income {
     display: grid;

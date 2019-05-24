@@ -6,7 +6,6 @@ body {
 }
 
 html {
-
   @include respond(phone) {
     font-size: 43%;
   }
