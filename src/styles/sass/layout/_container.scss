@@ -6,6 +6,12 @@
   grid-template-columns: repeat(3, 1fr);
   background-color: $color-background;
 
+  @supports (-webkit-appearance:none) {
+    .os-android & {
+      min-height: calc(100vh - 56px);
+    }
+  }
+
   &--income {
     display: grid;
   height: 100vh;
