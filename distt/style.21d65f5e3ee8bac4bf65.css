@@ -657,7 +657,7 @@ body {
   background-color: #fbfefc; }
   @media only screen and (max-width: 37.5em) {
     .container {
-      gird-template-rows: 10vh 1fr; } }
+      grid-template-rows: 10vh 1fr; } }
   .container--income {
     display: grid;
     height: 100vh;

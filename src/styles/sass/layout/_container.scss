@@ -7,7 +7,7 @@
   background-color: $color-background;
 
   @include respond(phone) {
-    gird-template-rows: 10vh 1fr;
+    grid-template-rows: 10vh 1fr;
 
 
   }
