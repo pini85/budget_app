@@ -1,13 +1,7 @@
-
 body {
-  background-color: #edfbf3;
+  // background-color: #edfbf3;
   font-family: 'Lato', sans-serif;
   color: $color-display;
-
-  @include respond(phone) {
-    max-height: calc(100vh - 65px);
-  }
-
 }
 
 html {
@@ -18,5 +12,3 @@ html {
     font-size: 37%; // 1rem = 12, 12/16 = 75%
   }
 }
-
-

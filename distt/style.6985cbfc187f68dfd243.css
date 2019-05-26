@@ -388,12 +388,8 @@ ORDER: base + typography > general layout + grid > page layout > components
     opacity: 0; } }
 
 body {
-  background-color: #edfbf3;
   font-family: 'Lato', sans-serif;
   color: #0c341d; }
-  @media only screen and (max-width: 37.5em) {
-    body {
-      max-height: calc(100vh - 65px); } }
 
 @media only screen and (max-width: 37.5em) {
   html {
