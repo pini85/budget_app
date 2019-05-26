@@ -44,3 +44,7 @@ refactor all the variables into one in each function like so :const blld,glglf,v
 format nav icons ahref etc
 
 formatting the controllers having too many functions to call
+
+
+
+BODY HEIGHT 100% DISABLE IT!!!!!!
