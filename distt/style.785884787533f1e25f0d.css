@@ -629,6 +629,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly; }
+  @media only screen and (max-width: 37.5em) {
+    .navigation {
+      display: none; } }
 
 .active {
   background-color: #32d175;
@@ -654,7 +657,7 @@ body {
   background-color: #fbfefc; }
   @media only screen and (max-width: 37.5em) {
     .container {
-      max-height: calc(100vh - 56px); } }
+      gird-template-rows: 10vh 1fr; } }
   .container--income {
     display: grid;
     height: 100vh;

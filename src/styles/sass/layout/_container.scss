@@ -1,6 +1,3 @@
-
-
-
 .container {
   display: grid;
   height: 100vh;
@@ -10,7 +7,9 @@
   background-color: $color-background;
 
   @include respond(phone) {
-    max-height: calc(100vh - 56px);
+    gird-template-rows: 10vh 1fr;
+
+
   }
 
   &--income {
