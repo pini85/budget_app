@@ -393,7 +393,7 @@ body {
   color: #0c341d; }
   @media only screen and (max-width: 37.5em) {
     body {
-      height: calc(100vh - 65px); } }
+      max-height: calc(100vh - 65px); } }
 
 @media only screen and (max-width: 37.5em) {
   html {
@@ -661,7 +661,7 @@ body {
   @media only screen and (max-width: 37.5em) {
     .container {
       grid-template-rows: 10vh 1fr;
-      height: calc(100vh - 65px); } }
+      max-height: calc(100vh - 65px); } }
   .container--income {
     display: grid;
     height: 100vh;
