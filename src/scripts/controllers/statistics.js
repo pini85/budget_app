@@ -12,6 +12,7 @@ const isChromium = !!window.chrome;
 if(isChromium &&  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && document.querySelector('.container') ){
 
   console.log('hellooooo')
-  document.querySelector('.container').style.maxHeight="calc(100vh - 114px)";
+  // document.querySelector('.container').style.maxHeight="calc(100vh - 110px)";
+  document.querySelector('.container').style.minHeight="calc(100vh - 56px)";
   document.body.style.position="fixed";
 }
