@@ -389,8 +389,7 @@ ORDER: base + typography > general layout + grid > page layout > components
 
 body {
   font-family: 'Lato', sans-serif;
-  color: #0c341d;
-  position: fixed; }
+  color: #0c341d; }
 
 @media only screen and (max-width: 37.5em) {
   html {

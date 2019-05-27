@@ -2,7 +2,7 @@ body {
   // background-color: #edfbf3;
   font-family: 'Lato', sans-serif;
   color: $color-display;   
-  position: fixed;
+  // position: fixed;
 }
 html {
   @include respond(phone) {
