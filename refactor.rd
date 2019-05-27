@@ -46,5 +46,20 @@ format nav icons ahref etc
 formatting the controllers having too many functions to call
 
 
+Refactor:
 
-BODY HEIGHT 100% DISABLE IT!!!!!!
+I want to disable scrolling for google chorme mobile so they will not see the empty space.
+I've tried so far the following:
+
+1) Installed a npm package and disabled body scrolling:
+
+https://www.npmjs.com/package/body-scroll-lock
+
+const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+disableBodyScroll(document.body);
+
+2) body.style ="over-flow".
+
+only worked for is body position fixed but it is not good for UX.
+https://medium.com/jsdownunder/locking-body-scroll-for-all-devices-22def9615177
+

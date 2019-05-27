@@ -1,9 +1,4 @@
 import * as stats from '../views/statisticsView.js';
-const bodyScrollLock = require('body-scroll-lock');
-const disableBodyScroll = bodyScrollLock.disableBodyScroll;
-disableBodyScroll(document.body);
-
-
 
 if (document.querySelector('body').className === 'statistics') {
   stats.notice();
@@ -16,17 +11,7 @@ if (document.querySelector('body').className === 'statistics') {
 const isChromium = !!window.chrome;
 if(isChromium &&  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && document.querySelector('.container') ){
 
-    console.log('hellooooo')
-  document.querySelector('.container').style.maxHeight="calc(100vh - 56px)";
+  console.log('hellooooo')
+  document.querySelector('.container').style.maxHeight="calc(100vh - 65px)";
+  document.body.style.position="fixed";
 }
-
-
-// function calcVH() {
-//   var vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-//   document.getElementById("selector").setAttribute("style", "height:" + vH + "px;");
-// }
-// calcVH();
-// window.addEventListener('onorientationchange', calcVH, true);
-
-
-// PROBLEMS WITH CHROME FULL SCREEN NAV BAR!
