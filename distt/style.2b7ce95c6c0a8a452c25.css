@@ -390,13 +390,14 @@ ORDER: base + typography > general layout + grid > page layout > components
 body {
   font-family: 'Lato', sans-serif;
   color: #0c341d;
-  height: calc(100vh - 56px); }
+  height: calc(100vh - 250px); }
 
 html {
   overflow: hidden; }
   @media only screen and (max-width: 37.5em) {
     html {
       font-size: 43%;
+      height: calc(100vh - 56px);
       overflow: hidden; } }
   @media only screen and (max-width: 25em) {
     html {
@@ -659,7 +660,8 @@ body {
   background-color: #fbfefc; }
   @media only screen and (max-width: 37.5em) {
     .container {
-      grid-template-rows: 10vh 1fr; } }
+      grid-template-rows: 10vh 1fr;
+      height: 100%; } }
   .container--income {
     display: grid;
     height: 100vh;

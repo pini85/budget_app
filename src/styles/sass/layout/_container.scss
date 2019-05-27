@@ -8,6 +8,7 @@
 
   @include respond(phone) {
     grid-template-rows: 10vh 1fr;
+    height: 100%;
 
 
   }
