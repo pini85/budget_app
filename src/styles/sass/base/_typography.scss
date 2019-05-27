@@ -10,8 +10,12 @@ body {
   text-transform: uppercase;
   color: $color-display-light;
 
-  @include respond(tab-land) {
+  @include respond (tab-land) {
     font-size: 5.5rem;
+  }
+  @include respond (phone) {
+    flex: 1;
+
   }
   
 }

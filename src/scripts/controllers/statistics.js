@@ -9,11 +9,8 @@ if (document.querySelector('body').className === 'statistics') {
 }
 
 const isChromium = !!window.chrome;
-if(isChromium &&  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && document.querySelector('.container') ){
-
-  console.log('hellooooo')
+if (isChromium &&  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && document.querySelector('.container')) {
   // document.querySelector('.container').style.maxHeight="calc(100vh - 104px)";
-  document.querySelector('.container').style.maxHeight="calc(100vh - 10.92vh)";
-
-  document.body.style.position="fixed";
+  document.querySelector('.container').style.maxHeight = 'calc(100vh - 10.9vh)';
+  document.body.style.position = 'fixed';
 }

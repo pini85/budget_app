@@ -63,3 +63,10 @@ disableBodyScroll(document.body);
 only worked for is body position fixed but it is not good for UX.
 https://medium.com/jsdownunder/locking-body-scroll-for-all-devices-22def9615177
 
+But I have a peoblem with my samsung s5 not displaying exactly how i want it.
+I tried to do this:
+if (window.matchMedia('(max-width: 370px)')) {
+    document.querySelector('.container').style.maxHeight = 'calc(100vh - x-amount)';
+    document.body.style.position = 'fixed';
+    But it is always true for everything.
+

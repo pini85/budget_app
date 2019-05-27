@@ -7,14 +7,44 @@
     align-items: center;
     justify-content: space-evenly;
 
-    @include respond(phone) {
+    @include respond (phone) {
       display: none;
-    }
+    } 
   }
-
 
 .active {
    background-color: lighten($color-primary, 5%);
     transform: translateY(-4px);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.navigation-mobile {
+  @include respond (phone) {
+    position: relative;
+    // background-color: red;
+    height: 0.4rem;
+
+
+  } 
+  &__icons {
+    @include respond (phone) {
+      &,
+      &::before,
+      &::after {
+        width: 4rem;
+        height: 3px;
+        background-color: $color-display-light;
+        display: inline-block;
+        margin-right: 4rem;
+      }
+      &::before,
+      &:after {
+        content: "";
+        position: absolute; 
+        left: 0;
+      }
+      &:before { top: -1.5rem; }
+      &:after { top: 1.5rem; }
+    }
+  } 
 }

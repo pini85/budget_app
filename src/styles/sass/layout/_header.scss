@@ -7,5 +7,9 @@
   background-color: $color-primary;
   border-bottom: 1px solid $color-primary-dark;
 
+  @include respond (phone) {
+    justify-content: center;
+  }
+
 
 }
