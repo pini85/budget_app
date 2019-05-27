@@ -38,6 +38,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
+    "body-scroll-lock": "^2.6.1",
     "chart.js": "^2.7.3",
     "uniqid": "^5.0.3",
     "webpack": "^4.30.0",
