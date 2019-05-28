@@ -2,13 +2,10 @@
   display: grid;
   height: 100vh;
   width: 100vw;
-  grid-template-rows: 10vh 1fr 10vh;
+  grid-template-rows: 10vh 1fr;
   grid-template-columns: repeat(3, 1fr);
   background-color: $color-background;
-
-  @include respond(phone) {
-    grid-template-rows: 10vh 1fr;
-  }
+  
 
   &--income {
     display: grid;
@@ -17,8 +14,6 @@
   grid-template-rows: 10vh min-content 1fr 10vh;
   grid-template-columns: repeat(3, 1fr);
   background-color: $color-background;
-
-
   }
 
   &__body {
@@ -34,9 +29,13 @@
     flex-direction: column;
     width: 100vw;
     align-items: center;
+   }
+   &--add {
+    
+   }
   }
-  }
-
 }
+
+
 
 

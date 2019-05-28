@@ -5,3 +5,35 @@
   to { transform: scale(0.01);
        opacity: 0;}
 }
+
+@keyframes navigation-menu-open {
+       from {transform: translateX(0)}
+       to { transform: translateX(74vw)}
+}
+
+@keyframes navigation-menu-close {
+       from {transform: translateX(74vw)}
+       to { transform: translateX(0)}
+}
+
+@include respond (phone-large) {
+       @keyframes navigation-menu-open {
+              from {transform: translateX(0)}
+              to { transform: translateX(87vw)}
+       }  
+       @keyframes navigation-menu-close {
+              from {transform: translateX(87vw)}
+              to { transform: translateX(0)}
+       }
+}
+
+@include respond (phone-extra-small) {
+       @keyframes navigation-menu-open {
+              from {transform: translateX(0)}
+              to { transform: translateX(85vw)}
+       }  
+       @keyframes navigation-menu-close {
+              from {transform: translateX(87vw)}
+              to { transform: translateX(0)}
+       }
+}

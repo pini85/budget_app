@@ -1,5 +1,6 @@
 import Budget from '../models/Budget.js';
 import * as addView from '../views/addView.js';
+import * as dom from './dom';
 import * as localStorage from '../data/localStorage.js';
 
 const controlBudgetIncome = () => {

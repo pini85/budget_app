@@ -1,50 +1,167 @@
-.navigation {
-   grid-row: 3 / 4;
-    grid-column: 1 / -1;
-    background-color: rgba($color-background-dark, 0.5);
-    border-top: 1.5px solid $color-background-dark;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
 
-    @include respond (phone) {
-      display: none;
-    } 
+.navigation {
+  position: fixed;
+  top: 1rem;
+  left: 5rem;
+  height: 7rem;
+  width: 7rem;
+  background-color: transparent;
+  text-align: center;//we can center the custom hamburger because we set it to inline-block.
+  cursor: pointer;
+
+  @include respond (phone-large) {
+    top: 1.8rem;
+    left: 1rem;
   }
 
-.active {
-   background-color: lighten($color-primary, 5%);
-    transform: translateY(-4px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+  @include respond (phone-medium) {
+    top: 1.1rem;
+  }
 
-.navigation-mobile {
-  @include respond (phone) {
-    position: relative;
-    // background-color: red;
-    height: 0.4rem;
+  @include respond (phone-small) {
+    top: 1.5rem;
+    left: 1rem;
+  }
 
+  @include respond (phone-extra-small) {
+    top: 0.9rem;
+    left: 2rem;
 
-  } 
-  &__icons {
-    @include respond (phone) {
+  }
+
+    &__icons {
+      position: relative;
+      margin-top: 3.5rem;
+  
       &,
       &::before,
       &::after {
-        width: 4rem;
-        height: 3px;
-        background-color: $color-display-light;
-        display: inline-block;
-        margin-right: 4rem;
+      width: 5rem;
+      height: 3px;
+      background-color: $color-display-light;
+      display: inline-block;
       }
-      &::before,
-      &:after {
+  
+      &::after,
+      &::before {
         content: "";
-        position: absolute; 
+        position: absolute;
         left: 0;
+        transition: all .2s;
       }
-      &:before { top: -1.5rem; }
-      &:after { top: 1.5rem; }
+  
+      &::before { top: -1.5rem;}
+      &::after { top: 1.5rem; }
     }
-  } 
+
+&__container {
+  background-color: $color-primary-dark;
+  position: absolute;
+  top: 8.9vh;
+  left: -90vw;
+  height: 100vh;
+  width: 43vw;
+  
+
+  @include respond (phone-large) {
+    top: 8.4vh;
+    width: 80vw;
+
+  
+  }
+
+  @include respond (phone-medium) {
+    top: 8.9vh;
+
+  }
+
+  @include respond (phone-small) {
+    top: 8.6vh;
+   
+  }
+
+  @include respond (phone-extra-small) {
+    top: 9vh;
+  
+
+  }
+ }
+ &__ul {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+   height: 50%;
+   margin-left: 16vw;
+
+   @include respond (tab-port) {
+    margin-left: 11vw;
+   }
+
+   @include respond (phone-large) {
+     margin-left: 9vw;
+     margin-top: 3rem;
+   }
+ }
+
+ &__item {
+  font-size: 5rem;
+   display: flex;
+   align-items: center;
+   color: $color-display-light;
+
+   @include respond(tab-land  ) {
+     font-size: 4rem;
+  }
+
+  @include respond(tab-port ) {
+    font-size: 3rem;
+ }
+
+ @include respond(phone-large) {
+  font-size: 5rem;
+}
+
+   
+ }
+ &__li {
+   font-weight: 400;
+   margin-left: 3rem;
+   text-transform: capitalize;
+ }
+}
+
+.navigation__icons::before {
+  top: -1.8rem;
+}
+.navigation__icons::after{
+  top: 1.8rem;
+}
+
+//JS SELECTORS//
+
+.navigation__icons.js-x {
+  background-color: transparent;
+  // margin-top: 30rem;
+}
+ .js-x.navigation__icons::before{
+  top: 0;
+  transform: rotate(135deg);
+}
+.js-x.navigation__icons::after{
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+.js-show-container {
+  animation-name: navigation-menu-open;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
+ 
+}
+
+.js-hide-container {
+  animation-name: navigation-menu-close;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
 }

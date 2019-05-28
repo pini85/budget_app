@@ -3,7 +3,7 @@
     position: relative; 
     width: 80vh;
 
-    @include respond(phone) {
+    @include respond(phone-large) {
       width: 56vh;
     }
 

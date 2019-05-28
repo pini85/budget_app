@@ -1,13 +1,30 @@
 
 //Media Query Manager
 /*
-352px: extra small phone
-400px : small phone
-0-600px: phone
-600-900px: tab-port
-900-1200px: tab-land
-[1200-1800]: is where our normal styles apply
-1800px > : big-desktop
+phone-extra-small
+352px
+iPhone 5/SE
+
+phone-small
+360px
+Samsung s5
+
+phone-medium
+372px
+iPhone 6
+
+phone-large
+600px
+iPhone 6 plus
+
+tab-port
+900px
+
+tab-land
+1200px
+
+big-desktop
+1800px >
 
 ORDER: base + typography > general layout + grid > page layout > components
 */
@@ -18,9 +35,16 @@ ORDER: base + typography > general layout + grid > page layout > components
      @media only screen and (max-width: 22em) { @content};
    }
    @if $breakpoint == phone-small {
-     @media only screen and (max-width: 25em) { @content};
+     @media only screen and (max-width: 23.125em) { @content};
    }
-   @if $breakpoint == phone {
+
+   @if $breakpoint == phone-medium {
+     @media only screen and (max-width: 25em) {
+       @content};
+     }
+
+   
+   @if $breakpoint == phone-large {
      @media only screen and (max-width: 37.5em) { @content };
    }
    @if $breakpoint == tab-port {

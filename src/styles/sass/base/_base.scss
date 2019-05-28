@@ -4,7 +4,7 @@ body {
   color: $color-display;   
 }
 html {
-  @include respond(phone) {
+  @include respond(phone-large) {
     font-size: 43%;
   }
   @include respond(phone-small) {

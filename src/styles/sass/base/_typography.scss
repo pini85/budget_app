@@ -13,11 +13,6 @@ body {
   @include respond (tab-land) {
     font-size: 5.5rem;
   }
-  @include respond (phone) {
-    flex: 1;
-
-  }
-  
 }
 
 .heading-secondary {

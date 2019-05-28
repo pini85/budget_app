@@ -36,6 +36,9 @@ body {
   line-height: 1.7;
 
 }
+ul {
+  list-style-type: none;
+}
 
 
 :any-link {

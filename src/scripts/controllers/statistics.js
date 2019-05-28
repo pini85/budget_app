@@ -1,4 +1,5 @@
-import * as stats from '../views/statisticsView.js';
+import * as stats from '../views/statisticsView';
+
 
 if (document.querySelector('body').className === 'statistics') {
   stats.notice();
@@ -6,11 +7,4 @@ if (document.querySelector('body').className === 'statistics') {
   document.querySelector('.js-weekly').addEventListener('click', stats.weekly);
   document.querySelector('.js-monthly').addEventListener('click', stats.monthly);
   document.querySelector('.js-yearly').addEventListener('click', stats.yearly);
-}
-
-const isChromium = !!window.chrome;
-if (isChromium &&  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && document.querySelector('.container')) {
-  // document.querySelector('.container').style.maxHeight="calc(100vh - 104px)";
-  document.querySelector('.container').style.maxHeight = 'calc(100vh - 10.9vh)';
-  document.body.style.position = 'fixed';
 }
