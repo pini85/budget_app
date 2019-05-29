@@ -21,7 +21,7 @@ const body1 = document.body.offsetHeight;
 // offsetHeight includes padding, scrollBar and borders. */
 
 const header = document.querySelector('.header').clientHeight;
-const sum = (body- header);
+const sum = (body- header) + (header/2);
 console.log(sum)
 
 document.querySelector('.income.add').style.height = `${sum}px`;
