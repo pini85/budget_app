@@ -412,92 +412,32 @@ ORDER: base + typography > general layout + grid > page layout > components
     -webkit-transform: translateX(0);
             transform: translateX(0); }
   to {
-    -webkit-transform: translateX(74vw);
-            transform: translateX(74vw); } }
+    -webkit-transform: translateX(90vw);
+            transform: translateX(90vw); } }
 
 @keyframes navigation-menu-open {
   from {
     -webkit-transform: translateX(0);
             transform: translateX(0); }
   to {
-    -webkit-transform: translateX(74vw);
-            transform: translateX(74vw); } }
+    -webkit-transform: translateX(90vw);
+            transform: translateX(90vw); } }
 
 @-webkit-keyframes navigation-menu-close {
   from {
-    -webkit-transform: translateX(74vw);
-            transform: translateX(74vw); }
+    -webkit-transform: translateX(90vw);
+            transform: translateX(90vw); }
   to {
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
 
 @keyframes navigation-menu-close {
   from {
-    -webkit-transform: translateX(74vw);
-            transform: translateX(74vw); }
+    -webkit-transform: translateX(90vw);
+            transform: translateX(90vw); }
   to {
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
-
-@media only screen and (max-width: 37.5em) {
-  @-webkit-keyframes navigation-menu-open {
-    from {
-      -webkit-transform: translateX(0);
-              transform: translateX(0); }
-    to {
-      -webkit-transform: translateX(87vw);
-              transform: translateX(87vw); } }
-  @keyframes navigation-menu-open {
-    from {
-      -webkit-transform: translateX(0);
-              transform: translateX(0); }
-    to {
-      -webkit-transform: translateX(87vw);
-              transform: translateX(87vw); } }
-  @-webkit-keyframes navigation-menu-close {
-    from {
-      -webkit-transform: translateX(87vw);
-              transform: translateX(87vw); }
-    to {
-      -webkit-transform: translateX(0);
-              transform: translateX(0); } }
-  @keyframes navigation-menu-close {
-    from {
-      -webkit-transform: translateX(87vw);
-              transform: translateX(87vw); }
-    to {
-      -webkit-transform: translateX(0);
-              transform: translateX(0); } } }
-
-@media only screen and (max-width: 22em) {
-  @-webkit-keyframes navigation-menu-open {
-    from {
-      -webkit-transform: translateX(0);
-              transform: translateX(0); }
-    to {
-      -webkit-transform: translateX(85vw);
-              transform: translateX(85vw); } }
-  @keyframes navigation-menu-open {
-    from {
-      -webkit-transform: translateX(0);
-              transform: translateX(0); }
-    to {
-      -webkit-transform: translateX(85vw);
-              transform: translateX(85vw); } }
-  @-webkit-keyframes navigation-menu-close {
-    from {
-      -webkit-transform: translateX(87vw);
-              transform: translateX(87vw); }
-    to {
-      -webkit-transform: translateX(0);
-              transform: translateX(0); } }
-  @keyframes navigation-menu-close {
-    from {
-      -webkit-transform: translateX(87vw);
-              transform: translateX(87vw); }
-    to {
-      -webkit-transform: translateX(0);
-              transform: translateX(0); } } }
 
 body {
   background-color: #edfbf3;
@@ -760,12 +700,13 @@ body {
     .navigation__icons::after {
       top: 1.5rem; }
   .navigation__container {
-    background-color: #1e874b;
+    background-color: rgba(30, 135, 75, 0.6);
     position: absolute;
     top: 94px;
     left: -90vw;
     height: calc(100% - 94px);
-    width: 43vw; }
+    width: 43vw;
+    z-index: 1; }
     @media only screen and (max-width: 37.5em) {
       .navigation__container {
         top: 58px;
@@ -776,20 +717,14 @@ body {
     flex-direction: column;
     align-items: end;
     justify-content: space-between;
-    height: 50%;
-    margin-left: 16vw; }
-    @media only screen and (max-width: 56.25em) {
-      .navigation__ul {
-        margin-left: 11vw; } }
-    @media only screen and (max-width: 37.5em) {
-      .navigation__ul {
-        margin-left: 9vw;
-        margin-top: 3rem; } }
+    margin-left: 5rem;
+    margin-top: 2vh; }
   .navigation__item {
-    font-size: 5rem;
+    font-size: 4rem;
     display: flex;
     align-items: center;
-    color: #edfbf3; }
+    color: #edfbf3;
+    margin-bottom: 2rem; }
     @media only screen and (max-width: 75em) {
       .navigation__item {
         font-size: 4rem; } }
@@ -798,11 +733,14 @@ body {
         font-size: 3rem; } }
     @media only screen and (max-width: 37.5em) {
       .navigation__item {
-        font-size: 5rem; } }
+        font-size: 4rem; } }
   .navigation__li {
     font-weight: 400;
     margin-left: 3rem;
     text-transform: capitalize; }
+
+.navigation__li:not(:last-child) {
+  border-bottom: 1px solid black; }
 
 .navigation__icons::before {
   top: -1.8rem; }
@@ -861,9 +799,12 @@ body {
   display: grid;
   height: 100vh;
   width: 100vw;
-  grid-template-rows: 10vh 1fr;
+  grid-template-rows: 94px 1fr;
   grid-template-columns: repeat(3, 1fr);
   background-color: #fbfefc; }
+  @media only screen and (max-width: 37.5em) {
+    .container {
+      grid-template-rows: 58px 1fr; } }
   .container--income {
     display: grid;
     height: 100vh;

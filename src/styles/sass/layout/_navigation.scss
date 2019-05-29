@@ -9,6 +9,7 @@
   cursor: pointer;
 
 
+
     &__icons {
       position: relative;
       margin-top: 3.5rem;
@@ -35,12 +36,13 @@
     }
 
 &__container {
-  background-color: $color-primary-dark;
+  background-color: rgba($color-primary-dark,0.6);
   position: absolute;
   top: 94px;
   left: -90vw;
   height: calc(100% - 94px);
   width: 43vw;
+  z-index: 1;
 
   @include respond (phone-large) {
     top: 58px;
@@ -69,24 +71,26 @@
   flex-direction: column;
   align-items: end;
   justify-content: space-between;
-   height: 50%;
-   margin-left: 16vw;
+  margin-left: 5rem;
+  margin-top: 2vh;
 
-   @include respond (tab-port) {
-    margin-left: 11vw;
-   }
+  //  @include respond (tab-port) {
+  //   margin-left: 11vw;
+  //  }
 
-   @include respond (phone-large) {
-     margin-left: 9vw;
-     margin-top: 3rem;
-   }
+  //  @include respond (phone-large) {
+  //    margin-left: 2rem;
+   
+  //  }
  }
 
  &__item {
-  font-size: 5rem;
+  font-size: 4rem;
    display: flex;
    align-items: center;
    color: $color-display-light;
+   margin-bottom: 2rem;
+   
 
    @include respond(tab-land  ) {
      font-size: 4rem;
@@ -97,16 +101,20 @@
  }
 
  @include respond(phone-large) {
-  font-size: 5rem;
+  font-size: 4rem;
 }
  }
  &__li {
    font-weight: 400;
    margin-left: 3rem;
    text-transform: capitalize;
+   
  }
 }
+.navigation__li:not(:last-child) {
+  border-bottom: 1px solid black;
 
+ }
 .navigation__icons::before {
   top: -1.8rem;
 }
