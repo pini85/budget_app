@@ -5,8 +5,8 @@ const chrome = () => {
 const isChromium = !!window.chrome;
   if (isChromium &&  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && document.querySelector('.container')) {
   // document.querySelector('.container').style.maxHeight="calc(100vh - 104px)";
-    document.querySelector('.container').style.maxHeight = 'calc(100vh - 10.9vh)';
-    document.body.style.position = 'fixed';
+    document.querySelector('.container').style.maxHeight = 'calc(100vh - 60px)';
+    // document.body.style.position = 'fixed';
   }
 };
 chrome();
@@ -36,3 +36,9 @@ const navContainer = () => {
 if ( document.querySelector('.navigation__container')) {
   document.querySelector('.navigation').addEventListener('click', (navContainer));
 }
+//Disabling scroll to all pages//
+const bodyScrollLock = require('body-scroll-lock');
+const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+const target = document.body;
+disableBodyScroll(target);
+

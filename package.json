@@ -19,7 +19,6 @@
     "@babel/core": "^7.4.3",
     "autoprefixer": "^9.4.3",
     "babel-loader": "^8.0.5",
-    "body-scroll-lock": "^2.6.1",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
@@ -39,6 +38,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
+    "body-scroll-lock": "^2.6.1",
     "chart.js": "^2.7.3",
     "uniqid": "^5.0.3",
     "webpack": "^4.30.0",
