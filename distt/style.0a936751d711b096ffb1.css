@@ -521,7 +521,8 @@ body {
   text-align: center;
   letter-spacing: .5rem;
   text-transform: uppercase;
-  color: #edfbf3; }
+  color: #edfbf3;
+  margin-left: -6rem; }
   @media only screen and (max-width: 75em) {
     .heading-primary {
       font-size: 5.5rem; } }
@@ -734,29 +735,13 @@ body {
       width: 56vh; } }
 
 .navigation {
-  position: fixed;
-  top: 1rem;
-  left: 5rem;
   height: 7rem;
   width: 7rem;
+  margin-right: auto;
+  margin-left: 3vw;
   background-color: transparent;
   text-align: center;
   cursor: pointer; }
-  @media only screen and (max-width: 37.5em) {
-    .navigation {
-      top: 1.8rem;
-      left: 1rem; } }
-  @media only screen and (max-width: 25em) {
-    .navigation {
-      top: 1.1rem; } }
-  @media only screen and (max-width: 23.125em) {
-    .navigation {
-      top: 1.5rem;
-      left: 1rem; } }
-  @media only screen and (max-width: 22em) {
-    .navigation {
-      top: 0.9rem;
-      left: 2rem; } }
   .navigation__icons {
     position: relative;
     margin-top: 3.5rem; }
@@ -777,23 +762,15 @@ body {
   .navigation__container {
     background-color: #1e874b;
     position: absolute;
-    top: 8.9vh;
+    top: 94px;
     left: -90vw;
-    height: 100vh;
+    height: calc(100% - 94px);
     width: 43vw; }
     @media only screen and (max-width: 37.5em) {
       .navigation__container {
-        top: 8.4vh;
+        top: 58px;
+        height: calc(100% - 58px);
         width: 80vw; } }
-    @media only screen and (max-width: 25em) {
-      .navigation__container {
-        top: 8.9vh; } }
-    @media only screen and (max-width: 23.125em) {
-      .navigation__container {
-        top: 8.6vh; } }
-    @media only screen and (max-width: 22em) {
-      .navigation__container {
-        top: 9vh; } }
   .navigation__ul {
     display: flex;
     flex-direction: column;
@@ -867,12 +844,18 @@ body {
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
+  height: 94px;
   justify-content: space-around;
   background-color: #2bbe69;
   border-bottom: 1px solid #1e874b; }
   @media only screen and (max-width: 37.5em) {
     .header {
-      justify-content: center; } }
+      justify-content: center;
+      height: 58px; } }
+
+.flex-box-container {
+  margin-left: auto;
+  margin-right: 3vw; }
 
 .container {
   display: grid;

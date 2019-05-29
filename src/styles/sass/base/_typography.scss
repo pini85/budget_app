@@ -9,6 +9,7 @@ body {
   letter-spacing: .5rem;
   text-transform: uppercase;
   color: $color-display-light;
+  margin-left: -6rem;// to position it exactly in the middle togehter with the other two flex box items.
 
   @include respond (tab-land) {
     font-size: 5.5rem;

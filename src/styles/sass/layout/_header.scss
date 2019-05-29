@@ -3,13 +3,20 @@
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
+  height: 94px;//A fixed px height so i can put the ul container absolutly exact to the bottom of the header.
   justify-content: space-around;
   background-color: $color-primary;
   border-bottom: 1px solid $color-primary-dark;
 
   @include respond (phone-large) {
     justify-content: center;
+    height: 58px;
   }
-
-
 }
+
+.flex-box-container {
+  margin-left: auto;
+  margin-right: 3vw;
+}
+//Want to position header in the middle and navigation on the side. Made 3 elements for flex box.
+//Left and right with auto margin and margin-left and right 3vw to make it exactly in the center.

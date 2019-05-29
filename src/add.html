@@ -10,8 +10,31 @@
   </head>
   <body>
     <div class="container">
-      <header class="header">  
+      <header class="header">
+          <nav class="navigation">
+              <div class="navigation__container">
+                <ul class="navigation__ul">
+                  <div class="navigation__item">
+                    <i class="fas fa-plus"></i>
+                    <li class="navigation__li">income</li>
+                  </div>
+                  <div class="navigation__item">
+                    <i class="fas fa-minus"></i>
+                    <li class="navigation__li">expense</li>
+                  </div>
+                  <div class="navigation__item">
+                    <i class="fas fa-chart-pie"></i> 
+                    <li class="navigation__li">overall</li>
+                  </div>
+                  <div class="navigation__item">
+                    <i class="fas fa-chart-bar"></i>
+                    <li class="navigation__li">statistics</li>
+                </ul>
+              </div>
+              <span class="navigation__icons">&nbsp</span>
+            </nav>  
         <h1 class="heading-primary">add item</h1>
+        <div class="flex-box-container"></div>
       </header>
       <div class="container__body container__body--add">
         <div class="add income">
@@ -33,29 +56,6 @@
           <div class="btn btn--expense" input type="submit" ><i class="fas fa-check"></i></div>
         </div>
       </div>
-      <nav class="navigation">
-          <div class="navigation__container">
-            <ul class="navigation__ul">
-              <div class="navigation__item">
-                <i class="fas fa-plus"></i>
-                <li class="navigation__li">income</li>
-              </div>
-              <div class="navigation__item">
-                <i class="fas fa-minus"></i>
-                <li class="navigation__li">expense</li>
-              </div>
-              <div class="navigation__item">
-                <i class="fas fa-chart-pie"></i> 
-                <li class="navigation__li">overall</li>
-              </div>
-              <div class="navigation__item">
-                <i class="fas fa-chart-bar"></i>
-                <li class="navigation__li">statistics</li>
-            </ul>
-          </div>
-          <span class="navigation__icons">&nbsp</span>
-        </nav>
-      
     </div><!-- container -->
       <!-- <nav class="navigation">
         <div class="btn navigation__addItem">

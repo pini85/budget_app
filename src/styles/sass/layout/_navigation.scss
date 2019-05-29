@@ -1,33 +1,13 @@
 
 .navigation {
-  position: fixed;
-  top: 1rem;
-  left: 5rem;
   height: 7rem;
   width: 7rem;
+  margin-right: auto;
+  margin-left: 3vw;
   background-color: transparent;
   text-align: center;//we can center the custom hamburger because we set it to inline-block.
   cursor: pointer;
 
-  @include respond (phone-large) {
-    top: 1.8rem;
-    left: 1rem;
-  }
-
-  @include respond (phone-medium) {
-    top: 1.1rem;
-  }
-
-  @include respond (phone-small) {
-    top: 1.5rem;
-    left: 1rem;
-  }
-
-  @include respond (phone-extra-small) {
-    top: 0.9rem;
-    left: 2rem;
-
-  }
 
     &__icons {
       position: relative;
@@ -57,31 +37,29 @@
 &__container {
   background-color: $color-primary-dark;
   position: absolute;
-  top: 8.9vh;
+  top: 94px;
   left: -90vw;
-  height: 100vh;
+  height: calc(100% - 94px);
   width: 43vw;
-  
 
   @include respond (phone-large) {
-    top: 8.4vh;
+    top: 58px;
+    height: calc(100% - 58px);
     width: 80vw;
-
-  
   }
 
   @include respond (phone-medium) {
-    top: 8.9vh;
+    
 
   }
 
   @include respond (phone-small) {
-    top: 8.6vh;
+    
    
   }
 
   @include respond (phone-extra-small) {
-    top: 9vh;
+  
   
 
   }
@@ -121,8 +99,6 @@
  @include respond(phone-large) {
   font-size: 5rem;
 }
-
-   
  }
  &__li {
    font-weight: 400;
