@@ -36,9 +36,3 @@ const navContainer = () => {
 if ( document.querySelector('.navigation__container')) {
   document.querySelector('.navigation').addEventListener('click', (navContainer));
 }
-//Disabling scroll to all pages//
-const bodyScrollLock = require('body-scroll-lock');
-const disableBodyScroll = bodyScrollLock.disableBodyScroll;
-const target = document.body;
-disableBodyScroll(target);
-
