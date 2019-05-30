@@ -47,7 +47,7 @@ const body1 = document.body.clientHeight;
 const header = document.querySelector('.header');
 const test = header.offsetHeight
 const googleNav = 56
-const sum = (((height - 57) - googleNav) / 2 );
+const sum = (((height - 57) - 0) / 2 );
 console.log(sum)
 // //20 is perfect in my phone. Try 22 in samsung. 21 just and just. Maybe do a media query between them.
 // console.log(sum)
