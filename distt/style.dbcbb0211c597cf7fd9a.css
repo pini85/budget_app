@@ -443,7 +443,8 @@ body {
   position: fixed;
   background-color: #edfbf3;
   font-family: 'Lato', sans-serif;
-  color: #0c341d; }
+  color: #0c341d;
+  height: calc(100vh - 56px); }
 
 @media only screen and (max-width: 37.5em) {
   html {

@@ -5,7 +5,7 @@ const chrome = () => {
 const isChromium = !!window.chrome;
   if (isChromium &&  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && document.querySelector('.container')) {
   // document.querySelector('.container').style.maxHeight="calc(100vh - 104px)";
-    document.querySelector('.container').style.maxHeight = 'calc(100vh - 60px)';
+    // document.querySelector('.container').style.maxHeight = 'calc(100vh - 60px)';
     // document.body.style.position = 'fixed';
   }
 };

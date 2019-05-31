@@ -2,7 +2,8 @@ body {
   position: fixed;//to prevent scrolling
   background-color: #edfbf3;
   font-family: 'Lato', sans-serif;
-  color: $color-display;   
+  color: $color-display;
+  height: calc(100vh - 56px);   
 }
 html {
   @include respond(phone-large) {

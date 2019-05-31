@@ -44,16 +44,32 @@ const body1 = document.body.clientHeight;
 // // /* clientHeight includes padding.
 // // offsetHeight includes padding, scrollBar and borders. */
 
-const header = document.querySelector('.header');
-const test = header.offsetHeight
-const googleNav = 56
-const sum = ((height - googleNav) / 2 );
-console.log(sum)
-// //20 is perfect in my phone. Try 22 in samsung. 21 just and just. Maybe do a media query between them.
-// console.log(sum)
 
-document.querySelector('.income.add').style.height = `${sum}px`;
-document.querySelector('.expense.add').style.height = `${sum}px`;
+
+
+
+
+// ///////////////////////////////////////
+// const header = document.querySelector('.header');
+// const test = header.offsetHeight
+// const googleNav = 56
+// const sum = ((height - googleNav) / 2 );
+// console.log(sum)
+// //STILL HAVE 1 PX MORE IN SAMSUNG S5
+// document.querySelector('.income.add').style.height = `${sum}px`;
+// document.querySelector('.expense.add').style.height = `${sum}px`;
+// ////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
 // const test = `${body - header}/2`;
 // // console.log(test)
 
