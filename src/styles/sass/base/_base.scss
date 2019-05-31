@@ -3,13 +3,24 @@ body {
   background-color: #edfbf3;
   font-family: 'Lato', sans-serif;
   color: $color-display;
-  height: calc(100vh - 60px);   
+  height: 100vh;
+
+  @include respond (phone-large) {
+     height: calc(100vh - 9.3rem);
+    }
+  @include respond (phone) {
+     height: calc(100vh - 9.3rem);
+    }
+  @include respond(phone-small) { 
+    height: calc(100vh - 9.3rem);
+  }
+ 
 }
 html {
   @include respond(phone-large) {
     font-size: 43%;
   }
   @include respond(phone-small) {
-    font-size: 37%; // 1rem = 12, 12/16 = 75%
+    font-size: 37%; // 1rem = 6, 6/16 = 37.5%
   }
 }
