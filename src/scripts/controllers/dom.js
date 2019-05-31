@@ -48,7 +48,7 @@ bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
 // headerHeight = header.clientHeight;
 
 console.log(bodyHeight)
-const chromeHeight = 56
+const chromeHeight = 20
 
 document.body.style.height= `${bodyHeight - chromeHeight}px`;
 
