@@ -39,25 +39,28 @@ if ( document.querySelector('.navigation__container')) {
 
 
 
-// const w = window,
-// d = document,
-// e = d.documentElement,
-// body = d.getElementsByTagName('body')[0],
+const w = window,
+d = document,
+e = d.documentElement,
+body = d.getElementsByTagName('body')[0],
 // header = d.querySelector('.header'),
-// bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight,
+bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
 // headerHeight = header.clientHeight;
 
-// console.log(bodyHeight,headerHeight)
-console.log('hi')
+console.log(bodyHeight)
+const chromeHeight = 56
+
+document.body.style.height= `${bodyHeight - chromeHeight}px`;
 
 
 
 
-const height = window.innerHeight;
+
+// const height = window.innerHeight;
 
 
-const body = document.body.offsetHeight;
-const body1 = document.body.clientHeight;
+// const body = document.body.offsetHeight;
+// const body1 = document.body.clientHeight;
 
 
 

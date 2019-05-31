@@ -445,12 +445,6 @@ body {
   font-family: 'Lato', sans-serif;
   color: #0c341d;
   height: 100vh; }
-  @media only screen and (max-width: 37.5em) {
-    body {
-      height: calc(100vh - 104px); } }
-  @media only screen and (max-width: 23.125em) {
-    body {
-      height: calc(100vh - 9.3rem); } }
 
 @media only screen and (max-width: 37.5em) {
   html {
