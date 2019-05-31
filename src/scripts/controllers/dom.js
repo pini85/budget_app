@@ -37,22 +37,17 @@ if ( document.querySelector('.navigation__container')) {
   document.querySelector('.navigation').addEventListener('click', (navContainer));
 }
 
-
-
-const w = window,
-d = document,
-e = d.documentElement,
-body = d.getElementsByTagName('body')[0],
-// header = d.querySelector('.header'),
-bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
-// headerHeight = header.clientHeight;
-
-console.log(bodyHeight)
-const chromeHeight = 0
-
-document.body.style.height= `${bodyHeight - chromeHeight}px`;
-
-
+document.onreadystatechange = function () {
+  if (document.readyState == "complete") {
+    const w = window,
+    d = document,
+    e = d.documentElement,
+    body = d.getElementsByTagName('body')[0],
+    bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
+     document.body.style.height= `${bodyHeight}px`;
+    
+  }
+}
 
 
 
