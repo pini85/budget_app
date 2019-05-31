@@ -36,3 +36,71 @@ const navContainer = () => {
 if ( document.querySelector('.navigation__container')) {
   document.querySelector('.navigation').addEventListener('click', (navContainer));
 }
+
+
+
+// const w = window,
+// d = document,
+// e = d.documentElement,
+// body = d.getElementsByTagName('body')[0],
+// header = d.querySelector('.header'),
+// bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight,
+// headerHeight = header.clientHeight;
+
+// console.log(bodyHeight,headerHeight)
+console.log('hi')
+
+
+
+
+const height = window.innerHeight;
+
+
+const body = document.body.offsetHeight;
+const body1 = document.body.clientHeight;
+
+
+
+// const sum = window - 
+
+
+// // const header = document.querySelector('.header').clientHeight;
+// // console.log(clientHeight)
+// // // console.log(header)
+// // console.log(body)
+
+// // /* clientHeight includes padding.
+// // offsetHeight includes padding, scrollBar and borders. */
+
+
+
+
+
+
+// ///////////////////////////////////////
+// const header = document.querySelector('.header');
+// const test = header.offsetHeight
+// const googleNav = 56
+// const sum = ((height - googleNav) / 2 );
+// console.log(sum)
+// //STILL HAVE 1 PX MORE IN SAMSUNG S5
+// document.querySelector('.income.add').style.height = `${sum}px`;
+// document.querySelector('.expense.add').style.height = `${sum}px`;
+// ////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+// const test = `${body - header}/2`;
+// // console.log(test)
+
+// // document.querySelector('.add').style.height = "1000px";
+// // document.querySelector('.expense.income').style.height = sum;
+
