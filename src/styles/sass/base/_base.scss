@@ -6,10 +6,10 @@ body {
   height: 100vh;
 
   @include respond (phone-large) {
-     height: calc(100vh - 10.6rem);
+     height: calc(100vh - 65px);
     }
   @include respond (phone) {
-     height: calc(100vh - 9.3rem);
+     height: calc(100vh - 56px);
     }
   @include respond(phone-small) { 
     height: calc(100vh - 9.3rem);
