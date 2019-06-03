@@ -36,15 +36,16 @@
     }
 
 &__container {
-  background-color: rgba($color-primary-dark,0.6);
+  background-color: rgba($color-primary-dark,0.5);
   position: absolute;
   top: 94px;
   left: -90vw;
   height: calc(100% - 94px);
-  width: 43vw;
+  width: 30vw;
   z-index: 1;
 
   @include respond (phone-large) {
+    background-color: rgba($color-primary-dark,0.6);
     top: 58px;
     height: calc(100% - 58px);
     width: 80vw;

@@ -1,3 +1,10 @@
+
+FIX WHEN USER CLICKS OUTSIDE THE NAV CONTAINER IT COLLPASES!
+
+
+
+
+
 Bugs to fix:
 when gathering the total numbers Math.round wont round the decimal points,/ locaStorage.total
 
@@ -69,4 +76,7 @@ if (window.matchMedia('(max-width: 370px)')) {
     document.querySelector('.container').style.maxHeight = 'calc(100vh - x-amount)';
     document.body.style.position = 'fixed';
     But it is always true for everything.
+
+
+
 

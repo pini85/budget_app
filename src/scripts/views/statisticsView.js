@@ -2,8 +2,8 @@ import * as local from '../data/localStorage';
 import * as faker from '../data/random';
 
 export const notice = () => {
-  if(document.querySelector('.statistics__notice')){
-    document.querySelector('.chart-container').style.display="none";
+  if (document.querySelector('.statistics__notice')) {
+    document.querySelector('.chart-container').style.display = 'none';
   }
   const income = local.length('income');
   const randomIncome = local.length('random-income');
@@ -27,7 +27,7 @@ export const random = () => {
 const removeNotice = () => {
   if (document.querySelector('.statistics__notice')) {
     document.querySelector('.container__body--statistics').removeChild(document.querySelector('.statistics__notice'));
-    document.querySelector('.chart-container').style.display="block";
+    document.querySelector('.chart-container').style.display = 'block';
   }
 };
 

@@ -4,17 +4,6 @@ body {
   font-family: 'Lato', sans-serif;
   color: $color-display;
   height: 100vh;
-
-  // @include respond (phone-large) {
-  //    height: calc(100vh - 104px);
-  //   }
-  // @include respond (phone) {
-  //    height: calc(100vh - 56px);
-  //   }
-  // @include respond(phone-small) { 
-  //   height: calc(100vh - 9.3rem);
-  // }
- 
 }
 html {
   @include respond(phone-large) {
