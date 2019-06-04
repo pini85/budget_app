@@ -1,6 +1,35 @@
 import * as localStorage from '../data/localStorage.js';
 import * as faker from '../data/random.js';
 
+const modifyDescription = (title, limit = 18) => {
+  if (title.length > limit) {
+    const newDescription = [];
+    title.split('').reduce((accumulator, currentWord) => {
+      if (accumulator < limit) {
+        newDescription.push(currentWord);
+      }
+
+      return accumulator + currentWord.length;
+      // we need to update the accumulator by returning a value.
+    }, 0);
+    return `${newDescription.join('')}..`;
+  }
+  return title;
+};
+
+const modifyDate = (el) => {
+  // uncomment selections to change the numbers into string months.
+  // const monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const string = JSON.stringify(el);
+  const split = string.split('-');
+  const year = split[0][1] + split[0][2] + split[0][3] + split[0][4];
+  // const month = monthName[parseInt(split[1]) - 1];
+  const month = split[1];
+  const day = split[2][0] + split[2][1];
+  const date = `${day} ${month} ${year}`;
+  return date;
+};
+
 
 const dom = (type) => {
   const data = localStorage.read(type);
@@ -11,21 +40,15 @@ const dom = (type) => {
   });
 
   data.forEach((el) => {
-    const string = JSON.stringify(el.date);
-    const split = string.split('-');
-    const year = split[0][1] + split[0][2] + split[0][3] + split[0][4];
-    // const month = monthName[parseInt(split[1]) - 1];
-    const month = split[1];
-    const day = split[2][0] + split[2][1];
-    const date = `${day} ${month} ${year}`;
-
+    const date = modifyDate(el.date);
+    const description = modifyDescription(el.description);
     const markup = `
      <div class = "item" id= "${el.id}">
       <div class="item__time">
           ${date}
         </div>
         <div class="item__description">
-           ${el.description}
+           ${description}
         </div>
         <div class="item__value item__value--red">
          -${el.value}

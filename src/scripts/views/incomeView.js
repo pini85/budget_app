@@ -26,7 +26,7 @@ const modifyDescription = (title, limit = 18) => {
       return accumulator + currentWord.length;
       // we need to update the accumulator by returning a value.
     }, 0);
-    return `${newDescription.join('')}...`;
+    return `${newDescription.join('')}..`;
   }
   return title;
 };

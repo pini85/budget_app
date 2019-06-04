@@ -529,6 +529,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: 1.8rem;
   background-color: #2bbe69;
   color: #edfbf3;
@@ -540,9 +541,19 @@ body {
   cursor: pointer; }
   @media only screen and (max-width: 37.5em) {
     .btn {
-      height: 12.5%;
-      width: 25%;
+      height: 6rem;
+      width: 12rem;
       font-size: 2.8rem; } }
+  .btn--random {
+    font-size: 1.8rem; }
+    @media only screen and (max-width: 37.5em) {
+      .btn--random {
+        font-size: 1.5rem; } }
+  .btn--statistics {
+    font-size: 1.8rem; }
+    @media only screen and (max-width: 37.5em) {
+      .btn--statistics {
+        font-size: 1.5rem; } }
   .btn--income {
     cursor: pointer; }
     .btn--income:hover {
@@ -675,6 +686,9 @@ body {
   color: #1e874b;
   background-color: #f8faf9;
   border: 1px solid #1e874b; }
+  @media only screen and (max-width: 37.5em) {
+    .random-dropdown {
+      height: 6rem; } }
 
 .chart-container {
   padding: 0 5rem;
@@ -853,8 +867,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+  -webkit-transform: translate(-50%, -150%);
+          transform: translate(-50%, -150%); }
   .overview__overall--green {
     color: #2bbe69; }
   .overview__overall--red {
@@ -866,8 +880,8 @@ body {
   position: absolute;
   left: 50%;
   top: 60%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); }
+  -webkit-transform: translate(-50%, -150%);
+          transform: translate(-50%, -150%); }
   .overview__percentage--green {
     color: #70df9f; }
   .overview__percentage--red {
