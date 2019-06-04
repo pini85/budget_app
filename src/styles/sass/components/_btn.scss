@@ -1,4 +1,7 @@
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.8rem;
     background-color: $color-primary;
     color: $color-display-light;
@@ -9,6 +12,13 @@
     text-transform: uppercase;
     transition: all .2s;
     cursor: pointer;
+
+    @include respond (phone-large) {
+      height: 12.5%;
+      width: 25%;
+      font-size: 2.8rem;
+      
+    }
 
     &--income {
       cursor: pointer;

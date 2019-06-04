@@ -13,6 +13,14 @@
 .add {
   position: relative;
 
+  &__container {
+    @include respond (phone-large) {
+      display: flex;
+      flex-direction: column;
+
+    }
+  }
+
   &__message {
     font-size: 40rem;
     text-transform: uppercase;
@@ -33,6 +41,11 @@
     font-family: inherit;
     background-color: rgba(#fff, .5);
 
+    @include respond (phone-large) {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+
 
   }
 
@@ -43,6 +56,10 @@
     color: inherit;
     font-family: inherit;
     background-color: rgba(#fff, .5);
+
+    @include respond (phone-large) {
+      font-size: 3rem;
+    }
 
   }
 }

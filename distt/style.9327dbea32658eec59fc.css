@@ -470,7 +470,7 @@ body {
       font-size: 5.5rem; } }
 
 .heading-secondary {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 300;
   text-align: center;
   letter-spacing: .2rem;
@@ -526,6 +526,9 @@ body {
   margin-top: 5vh; }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1.8rem;
   background-color: #2bbe69;
   color: #edfbf3;
@@ -535,6 +538,11 @@ body {
   text-transform: uppercase;
   transition: all .2s;
   cursor: pointer; }
+  @media only screen and (max-width: 37.5em) {
+    .btn {
+      height: 12.5%;
+      width: 25%;
+      font-size: 2.8rem; } }
   .btn--income {
     cursor: pointer; }
     .btn--income:hover {
@@ -750,6 +758,9 @@ body {
 .navigation__icons::after {
   top: 1.8rem; }
 
+.navigation__item i {
+  width: 4rem; }
+
 .navigation__icons.js-x {
   background-color: transparent; }
 
@@ -916,6 +927,10 @@ body {
 
 .add {
   position: relative; }
+  @media only screen and (max-width: 37.5em) {
+    .add__container {
+      display: flex;
+      flex-direction: column; } }
   .add__message {
     font-size: 40rem;
     text-transform: uppercase;
@@ -934,6 +949,10 @@ body {
     color: inherit;
     font-family: inherit;
     background-color: rgba(255, 255, 255, 0.5); }
+    @media only screen and (max-width: 37.5em) {
+      .add__description {
+        font-size: 3rem;
+        margin-bottom: 3rem; } }
   .add__value {
     font-size: 2rem;
     padding: 1.5rem 2rem;
@@ -941,6 +960,9 @@ body {
     color: inherit;
     font-family: inherit;
     background-color: rgba(255, 255, 255, 0.5); }
+    @media only screen and (max-width: 37.5em) {
+      .add__value {
+        font-size: 3rem; } }
 
 .income {
   height: 50%;

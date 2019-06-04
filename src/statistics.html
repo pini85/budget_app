@@ -11,9 +11,37 @@
   <body class="statistics">
     <div class="container">
       <header class="header">
+          <nav class="navigation">
+              <div class="navigation__container">
+                <ul class="navigation__ul">
+                  <a href="add.html" class="navigation__item">
+                    <i class="fas fa-edit"></i>
+                    <li class="navigation__li">Create Budget</li>
+                    </a>
+                  <a href="income.html" class="navigation__item">
+                    <i class="fas fa-plus"></i>
+                    <li class="navigation__li">income</li>
+                  </a>
+                  <a href="expense.html" class="navigation__item">
+                    <i class="fas fa-minus"></i>
+                    <li class="navigation__li">expense</li>
+                  </a>
+                  <a href="overview.html" class="navigation__item">
+                      <i class="fas fa-chart-pie"></i>
+                      <li class="navigation__li">overview</li>
+                    </a>
+                    <a href="statistics.html" class="navigation__item">
+                      <i class="fas fa-chart-bar"></i>
+                      <li class="navigation__li">statistics</li>
+                    </a>
+                </ul>
+              </div>
+              <span class="navigation__icons">&nbsp</span>
+            </nav>  
         <h1 class="heading-primary">statistics</h1>
+        <div class="flex-box-container"></div>
       </header>
-      <div class="container__body--statistics">
+      <div class="container__body container__body--statistics">
         <div class="statistics__notice">
           <div class="statistics__notice-text js-notice">
           Please select a timeline. If you don't have that much data you can generate random data as well.
@@ -36,34 +64,15 @@
             <option value="50">50</option>
             <option value="100">100</option>
             <option value="500">500</option>
-
           </select>
-          </div>
-
+        </div>
         <div class="statistics__options">
           <div class="btn btn--dark-green js-weekly">Weekly</div>
           <div class="btn btn--dark-green js-monthly">Monthly</div>
           <div class="btn btn--dark-green js-yearly">Yearly</div>
         </div>
       </div>
-     <nav class="navigation">
-        <div class="btn navigation__addItem">
-          <a href="add.html">Add item</a>
-        </div>
-        <div class="btn navigation__income">
-          <a href="income.html">Incomes</a>
-        </div>
-        <div class="btn navigation__overview">
-          <a href="overview.html"> Overview </a>
-        </div>
-        <div class="btn navigation__expense">
-          <a href="expense.html">Expenses</a>
-        </div>
-        <div class="btn navigation__statistics">
-          <a href="statistics.html">statistics</a>
-        </div>
-      </nav>
-      </div>
+     </div>
   </body>
 </html>
 
