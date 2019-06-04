@@ -33,31 +33,15 @@ if ( document.querySelector('.navigation__container')) {
   // Clicked outside the nav collpases the nav as well functionality.
     document.querySelector('.container__body').addEventListener('click',() => {
       if( document.querySelector('.js-show-container')) {
+        console.log('hi')
       const element = document.querySelector('.navigation__icons');
       element.classList.toggle('js-x');
         document.querySelector('.navigation__container').classList.remove('js-show-container')
         document.querySelector('.navigation__container').classList.add('js-hide-container')
         document.querySelector('.container__body').style.filter = 'none';
-        document.querySelector('.container__body').style.pointerEvents = 'auto';
-        document.querySelector('.container__body').style.userSelect = 'auto';
       }
     })
-
-
-  //functionality if user clicks outside the container, the contianer collapses//
-  if(document.querySelector('.js-show-container')) {
-
-    document.querySelector('.container__body').addEventListener('click',() => {
-      document.querySelector('.container__body').style.pointerEvents = 'auto';
-      document.querySelector('.container__body').style.userSelect = 'auto'; 
-      
-      console.log('hi')
-      // document.querySelector('.navigation__container').classList.remove('js-show-container')
-    });
-
-  }
 }
-
 
 
 
@@ -75,8 +59,3 @@ document.onreadystatechange = function () {
     
   }
 }
-
-// document.querySelector('.container__body').addEventListener('click',() => {
- 
-//   console.log('hi')
-// });
