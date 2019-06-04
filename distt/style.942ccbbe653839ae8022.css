@@ -702,15 +702,16 @@ body {
     .navigation__icons::after {
       top: 1.5rem; }
   .navigation__container {
-    background-color: rgba(30, 135, 75, 0.6);
+    background-color: rgba(30, 135, 75, 0.5);
     position: absolute;
     top: 94px;
     left: -90vw;
     height: calc(100% - 94px);
-    width: 43vw;
+    width: 30vw;
     z-index: 1; }
     @media only screen and (max-width: 37.5em) {
       .navigation__container {
+        background-color: rgba(30, 135, 75, 0.6);
         top: 58px;
         height: calc(100% - 58px);
         width: 80vw; } }
