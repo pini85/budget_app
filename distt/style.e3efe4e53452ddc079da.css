@@ -446,6 +446,10 @@ body {
   color: #0c341d;
   height: 100vh; }
 
+@media screen and (orientation: landscape) and (max-width: 50em) {
+  html {
+    font-size: 35%; } }
+
 @media only screen and (max-width: 37.5em) {
   html {
     font-size: 43%; } }

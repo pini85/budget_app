@@ -43,10 +43,15 @@ ORDER: base + typography > general layout + grid > page layout > components
        @content};
      }
 
-   
+    
    @if $breakpoint == phone-large {
-     @media only screen and (max-width: 37.5em) { @content };
+    @media only screen and (max-width: 37.5em)  { @content };
    }
+
+   @if $breakpoint == landscape-phone {
+    @media screen and (orientation:landscape) and (max-width: 50em) { @content };
+  }
+  
    @if $breakpoint == tab-port {
      @media only screen and (max-width: 56.25em) { @content };
    }
