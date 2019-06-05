@@ -12,7 +12,7 @@ const controlBudgetIncome = () => {
   // Make new Budget object
   if (description.length > 0 && value > 0) {
     const newBudget = new Budget(description, value);
-
+   
     newBudget.idIncome();
 
     // newBudget.calculateDate();

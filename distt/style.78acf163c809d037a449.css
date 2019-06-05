@@ -585,9 +585,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr -webkit-min-content;
   grid-template-columns: 1fr 1fr 1fr min-content;
-  justify-items: center;
-  grid-row-gap: 1rem; }
+  justify-items: center; }
   .item__container {
+    display: grid;
+    grid-row-gap: 1rem;
     background-color: #f8faf9;
     width: 50%;
     max-height: 51vh;
@@ -596,7 +597,8 @@ body {
     overflow: auto; }
     @media only screen and (max-width: 75em) {
       .item__container {
-        width: 100%; } }
+        width: 100%;
+        grid-row-gap: 2rem; } }
     .item__container-description {
       background-color: #f8faf9;
       display: grid;
@@ -662,6 +664,9 @@ body {
   .item__delete {
     grid-column: 4/4;
     font-size: 2rem; }
+    @media only screen and (max-width: 37.5em) {
+      .item__delete {
+        font-size: 2.4rem; } }
     .item__delete-btn {
       color: #0c341d;
       font-weight: 300;
