@@ -7,7 +7,6 @@ export default class Budget {
     this.value = value,
     this.date = new Date();
     this.id = id;
-    // this.state = [];
   }
 
   idIncome() {
