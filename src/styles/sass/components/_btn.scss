@@ -49,6 +49,7 @@
       &:hover {
         transform: translateY(-1px) !important;
         background-color: lighten($color-expense, 5%) !important;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
       }
     }
 
@@ -59,7 +60,7 @@
     }
 
     &--dark-green {
-      background-color: $color-primary-dark;
+      background-color: $color-primary-dark;  
 
       &:hover {
         background-color: lighten($color-primary-dark, 5%);

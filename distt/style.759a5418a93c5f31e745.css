@@ -569,7 +569,8 @@ body {
     .btn--expense:hover {
       -webkit-transform: translateY(-1px) !important;
               transform: translateY(-1px) !important;
-      background-color: #ea6153 !important; }
+      background-color: #ea6153 !important;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
   .btn:hover {
     background-color: #32d175;
     -webkit-transform: translateY(-4px);
