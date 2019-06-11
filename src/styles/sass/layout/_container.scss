@@ -11,6 +11,14 @@
     grid-template-rows: 58px 1fr;
   }
   
+  &--index {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
   &--income {
     display: grid;

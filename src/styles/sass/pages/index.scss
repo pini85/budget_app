@@ -9,6 +9,11 @@
 
 &__heading {
   font-size: 5rem;
+  text-align: center;
+
+  @include respond(phone-large) {
+    font-size: 3rem;
+  }
 
 }
   &__icon {
