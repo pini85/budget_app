@@ -20,6 +20,16 @@
       font-size: 2.8rem;
     }
 
+    &--index {
+      height: 5rem;
+      width: 14rem;
+      @include respond(phone-large) {
+        height: 6rem;
+        width: 14rem;
+        font-size: 1.8rem;
+      }
+    }
+
     &--random {
       font-size: 1.8rem;
       @include respond (phone-large) {

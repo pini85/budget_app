@@ -548,6 +548,14 @@ body {
       height: 6rem;
       width: 12rem;
       font-size: 2.8rem; } }
+  .btn--index {
+    height: 5rem;
+    width: 14rem; }
+    @media only screen and (max-width: 37.5em) {
+      .btn--index {
+        height: 6rem;
+        width: 14rem;
+        font-size: 1.8rem; } }
   .btn--random {
     font-size: 1.8rem; }
     @media only screen and (max-width: 37.5em) {
@@ -1053,9 +1061,50 @@ body {
   color: #1e874b; }
 
 .disclaimer__note {
-  font-size: 2rem; }
+  font-size: 2rem;
+  text-align: center; }
   .disclaimer__note span {
     color: #2bbe69;
     font-weight: 800;
     border-bottom: 2px solid #1e874b; }
+
+.features__container {
+  height: 100vh;
+  width: 100vw; }
+
+.features__header {
+  margin-left: 0; }
+  @media only screen and (max-width: 37.5em) {
+    .features__header {
+      font-size: 4.5rem; } }
+
+.features__ul {
+  font-size: 2rem;
+  text-align: center;
+  width: 100vw; }
+
+.features__note {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  text-align: center; }
+  @media only screen and (max-width: 37.5em) {
+    .features__note {
+      flex-direction: column; } }
+
+@media only screen and (max-width: 37.5em) {
+  .features__note i {
+    margin-top: 1rem; } }
+
+.features__paragraph {
+  margin-right: 1rem;
+  font-weight: 500; }
+
+.features__btn {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
