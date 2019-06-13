@@ -72,8 +72,8 @@ if(document.body.className = "index") {
   shareButton.addEventListener('click', event => {
     if (navigator.share) { 
      navigator.share({
-        title: 'WebShare API Demo',
-        url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'
+        title: 'Amazing budget app',
+        url: 'https://my-amazing-budget-app.netlify.com/'
       }).then(() => {
         console.log('Thanks for sharing!');
       })
