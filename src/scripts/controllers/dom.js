@@ -64,7 +64,7 @@ document.onreadystatechange = function () {
 
 // Add the Web Share API
 
-if(document.querySelector('.shareButton')) {
+if(document.querySelector('.share-button')) {
   const shareButton = document.querySelector('.share-button');
   const shareDialog = document.querySelector('.share-dialog');
   const closeButton = document.querySelector('.close-button');
