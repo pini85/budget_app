@@ -3,6 +3,8 @@ import * as addView from '../views/addView.js';
 import * as dom from './dom';
 import * as localStorage from '../data/localStorage.js';
 
+import imgPhone from '../../images/phone.js';
+
 const controlBudgetIncome = () => {
   // Get params from UI
   const description = addView.getDescriptionIncome();
@@ -56,6 +58,7 @@ const controlBudgetExpense = () => {
 // add.html//
 
 if (document.querySelector('body').className === 'add') {
+  imgPhone();
   document.querySelector('.btn--income').addEventListener('click', (e) => {
     const btn = e.target.closest('.btn--income');
     if (btn) {
