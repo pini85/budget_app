@@ -58,7 +58,7 @@ const controlBudgetExpense = () => {
 // add.html//
 
 if (document.querySelector('body').className === 'add') {
-  imgPhone();
+  // imgPhone();
   document.querySelector('.btn--income').addEventListener('click', (e) => {
     const btn = e.target.closest('.btn--income');
     if (btn) {

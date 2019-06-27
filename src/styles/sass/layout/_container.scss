@@ -1,16 +1,22 @@
 .container {
-  display: grid;
-  height: 100%;
-  width: 100vw;
-  grid-template-rows: 94px 1fr;//fixed height for header so it will correspond to the nav containers height.
+  //this code delete an uncomment others to get normal display
+  // position: absolute;
+  // top: 50vh;
+  // left: 50vw;
+  // transform: translate(-49.3%,-50.5%);
+  // height: 80.9vh;
+  // width: 23.6vw;
+
+  height: 100vh;
+  width: 100%;
+  grid-template-rows: 94px 1fr; //fixed height for header so it will correspond to the nav containers height.
   grid-template-columns: repeat(3, 1fr);
   background-color: $color-background;
- 
 
-  @include respond (phone-large) {
+  @include respond(phone-large) {
     grid-template-rows: 58px 1fr;
   }
-  
+
   &--index {
     width: 100vw;
     height: 100vh;
@@ -22,11 +28,11 @@
 
   &--income {
     display: grid;
-  height: 100vh;
-  width: 100vw;
-  grid-template-rows: 10vh min-content 1fr 10vh;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: $color-background;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: 10vh min-content 1fr 10vh;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: $color-background;
   }
 
   &__body {
@@ -36,19 +42,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: calc(100vh - 94px);
+
+    @include respond(phone-large) {
+      // height: calc(100vh - 58px)
+    }
 
     &--statistics {
-    display:flex;
-    flex-direction: column;
-    width: 100vw;
-    align-items: center;
-   }
-   &--add {
-    
-   }
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      align-items: center;
+    }
+    &--add {
+
+    }
   }
 }
-
-
-
-
