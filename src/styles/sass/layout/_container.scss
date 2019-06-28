@@ -59,3 +59,18 @@
     }
   }
 }
+
+// Mobile-view
+
+.container-mobile-view {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-49.3%,-50.5%);
+  height: 80.9vh;
+  width: 23.6vw;
+  grid-template-rows: 94px 1fr; 
+  grid-template-columns: repeat(3, 1fr);
+  background-color: $color-background;
+
+}

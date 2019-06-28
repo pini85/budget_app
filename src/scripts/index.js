@@ -4,6 +4,7 @@ import * as overView from './controllers/overview.js';
 import * as income from './controllers/income.js';
 import * as expense from './controllers/expense.js';
 import * as stats from './controllers/statistics.js';
+import * as mobileView from './views/mobileView';
 
 require('../styles/sass/main.scss');
 

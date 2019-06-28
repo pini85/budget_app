@@ -28,7 +28,7 @@ export const persistData = (budget, type) => {
   localStorage.setItem(type, JSON.stringify(getItem));
 };
 
-persistData();
+// persistData();
 //   (budget,type) => {
 //   const getItem = JSON.parse(localStorage.getItem(type)) || [];
 //   getItem.push(budget);
