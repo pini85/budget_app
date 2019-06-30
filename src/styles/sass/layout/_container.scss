@@ -67,10 +67,17 @@
   top: 50vh;
   left: 50vw;
   transform: translate(-49.3%,-50.5%);
-  height: 80.9vh;
-  width: 23.6vw;
+  height: 81.3vh;
+  width: 44.3vh;
   grid-template-rows: 94px 1fr; 
   grid-template-columns: repeat(3, 1fr);
   background-color: $color-background;
 
 }
+
+.container__body.container__body-mobile-view {
+  height: 71.4vh;
+}
+
+//414
+//736
