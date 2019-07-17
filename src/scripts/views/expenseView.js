@@ -76,6 +76,7 @@ export const displayExpense = () => {
 
   if (localStorage.read('expense') || localStorage.read('random-expense')) {
     document.querySelector('.js-random').addEventListener('click', () => {
+      console.log('hi')
       faker.expense('2016-01-01');
       dom('random-expense');
       location.reload();// need to reload page so we can find the dom and then delete it.

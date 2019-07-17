@@ -11,8 +11,6 @@ if(document.querySelector('.navigation__item.js-mobile') || document.querySelect
 }
 
 
-    
-
 if (localStorage.getItem('mobile') === 'true') {
     const body = document.querySelector('body');
 
@@ -54,6 +52,7 @@ document.querySelector('.heading-primary').style.fontSize="5.5rem";
 if( document.querySelector('.navigation__item.js-mobile')) {
     document.querySelector('.navigation__item.js-mobile').style.display="none";
 }
+    document.querySelector('.navigation').style.marginRight="9rem";
     document.querySelector('.navigation__ul').classList.add('navigation__ul-mobile-view');
     document.querySelector('.navigation__container').classList.add('navigation__container-mobile-view');
     const node =  Array.from(document.querySelector('.navigation__ul').children);
@@ -75,7 +74,7 @@ document.querySelector('.chart-container').style.width="55vh";
 
 //income//
 if(document.querySelector('.item__container-description') &&  document.querySelector('.income') ) {
-     document.querySelector('.item__container').style.width = "100%";
+     document.querySelector('.item__container').style.width = "90%";
 
 }
 
@@ -86,7 +85,7 @@ if(document.querySelector('.item__container-description') &&  document.querySele
 if(document.querySelector('.item__container-description') &&  document.querySelector('.expense') ) {
     //override .expense to get the color of the background different on mobile view 
     document.querySelector('.expense').style.backgroundColor="#edfbf3";
-    // document.querySelector('.item__container').style.width = "100%";
+    document.querySelector('.item__container').style.width = "90%";
 
     // item__container {
     //     width: 100%;
