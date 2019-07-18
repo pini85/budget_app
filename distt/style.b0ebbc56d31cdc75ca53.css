@@ -866,6 +866,20 @@ button:hover, .button:hover {
     display: flex;
     align-items: center;
     justify-content: space-evenly; }
+  .modal__desktop-only {
+    display: none; }
+    @media only screen and (max-width: 75em) {
+      .modal__desktop-only {
+        display: inherit; } }
+  .modal__desktop-only-text {
+    display: block; }
+    @media only screen and (max-width: 75em) {
+      .modal__desktop-only-text {
+        display: none; } }
+
+@media only screen and (max-width: 37.5em) {
+  .js-mobile, .js-desktop {
+    display: none; } }
 
 .navigation {
   height: 7rem;

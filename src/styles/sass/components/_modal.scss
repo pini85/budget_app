@@ -30,4 +30,23 @@
         align-items: center;
         justify-content: space-evenly;
     }
+    //Logic to only show options for mobile view when viewing on a tablet or smaller screen
+    &__desktop-only {
+        display: none;
+        @include respond(tab-land) {
+            display: inherit;
+        }
+    }
+    &__desktop-only-text {
+        display: block;
+        @include respond(tab-land) {
+            display: none;
+        }
+    }
+}
+.js-mobile, .js-desktop {
+    @include respond(phone-large) {
+        display: none;
+    }
+
 }
