@@ -41,7 +41,7 @@ if (localStorage.getItem('mobile') === 'true' && !document.querySelector('body')
 
   // Heading primary
   if (document.querySelector('.heading-primary')) {
-    document.querySelector('.heading-primary').style.fontSize = '5.5rem';
+    document.querySelector('.heading-primary').style.fontSize = '4vh';
   }
 
 
