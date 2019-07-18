@@ -3,7 +3,6 @@ import * as addView from '../views/addView.js';
 import * as dom from './dom';
 import * as localStorage from '../data/localStorage.js';
 
-import imgPhone from '../../images/phone.js';
 
 const controlBudgetIncome = () => {
   // Get params from UI

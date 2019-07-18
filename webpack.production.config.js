@@ -40,8 +40,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [ 'file-loader' ]
       }
-
       ]
    },
    plugins: [
@@ -91,11 +94,6 @@ module.exports = {
       filename: 'statistics.html',
 
       template: './src/statistics.html',
-     }),
-    new HtmlWebpackPlugin({
-      filename: 'future-features.html',
-
-      template: './src/future-features.html',
      })
 
    ]

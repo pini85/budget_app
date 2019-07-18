@@ -5,6 +5,7 @@ import * as income from './controllers/income.js';
 import * as expense from './controllers/expense.js';
 import * as stats from './controllers/statistics.js';
 import * as mobileView from './views/mobileView';
+import * as modalView from './views/modalView';
 
 require('../styles/sass/main.scss');
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Budget app - Save money!">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <link href="https://my-amazing-budget-app.netlify.com/style.cd42ba40fec8038fb5c8.css" rel="stylesheet"></head>
+  <body class="overview">
+    <div class="container">
+      <header class="header">
+        <nav class="navigation">
+          <div class="navigation__container">
+            <ul class="navigation__ul">
+              <a href="add.html" class="navigation__item">
+                <i class="fas fa-edit"></i>
+                <li class="navigation__li">add item</li>
+                </a>
+              <a href="income.html" class="navigation__item">
+                <i class="fas fa-plus"></i>
+                <li class="navigation__li">income</li>
+              </a>
+              <a href="expense.html" class="navigation__item">
+                <i class="fas fa-minus"></i>
+                <li class="navigation__li">expense</li>
+              </a>
+              <a href="overview.html" class="navigation__item">
+                  <i class="fas fa-chart-pie"></i>
+                  <li class="navigation__li">overview</li>
+                </a>
+                <a href="statistics.html" class="navigation__item">
+                  <i class="fas fa-chart-bar"></i>
+                  <li class="navigation__li">statistics</li>
+                </a>
+                <a href="" class="navigation__item js-mobile">
+                  <i class="fas fa-mobile"></i>
+                  <li class="navigation__li mobile">Mobile View</li>
+                </a>
+                <a href="" class="navigation__item js-desktop">
+                  <i class="fas fa-chart-bar desktop"></i>
+                  <li class="navigation__li">Desktop view</li>
+                </a>
+            </ul>
+          </div>
+          <span class="navigation__icons">&nbsp</span>
+        </nav>  
+        <h1 class="heading-primary">overview</h1>
+        <div class="flex-box-container"></div>
+      </header>
+      <div class="container__body">
+        <h2 class="heading-secondary js-month ul-margin-bottom-big"></h2>
+
+        <div class="chart-container">
+          <canvas id="myChart" width="400" height="350"></canvas>
+          <div class="overview__overall"> </div>
+          <div class="overview__percentage"></div>
+          <div class="overview__options ul-margin-top-medium">
+              <div class="btn btn--random btn--dark-green ul-margin-bottom-small ul-margin-top-medium js-random">Random data
+              </div>
+          <select class = "random-dropdown ul-margin-top-medium ul-margin-bottom-small">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+      </div>
+      <div class="overview__options js-with-no-chart">
+              <div class="btn btn--random btn--dark-green ul-margin-top-medium ul-margin-bottom-small js-random">Random data
+              </div>
+          <select class = "random-dropdown ul-margin-top-medium ul-margin-bottom-small">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript" src="https://my-amazing-budget-app.netlify.com/bundle.7c9c0f6b6caddd694535.js"></script></body>
+</html>
+
+
+
+
+

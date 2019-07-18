@@ -1,7 +1,7 @@
 import * as localStorage from '../data/localStorage.js';
 import * as faker from '../data/random.js';
 
-const modifyDescription = (title, limit = 18) => {
+const modifyDescription = (title, limit = 16) => {
   if (title.length > limit) {
     const newDescription = [];
     title.split('').reduce((accumulator, currentWord) => {

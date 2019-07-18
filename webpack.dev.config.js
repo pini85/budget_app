@@ -11,8 +11,6 @@ module.exports = {
 
   },
 
-
-
   output: {
 
     filename: 'bundle.js',
@@ -89,11 +87,6 @@ module.exports = {
       filename: 'statistics.html',
 
       template: './src/statistics.html',
-     }),
-    new HtmlWebpackPlugin({
-      filename: 'future-features.html',
-
-      template: './src/future-features.html',
      })
    ]
 };

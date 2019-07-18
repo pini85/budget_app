@@ -9,10 +9,8 @@
 //   }
 // };
 // chrome();
-
 //Navigation animation//
 if ( document.querySelector('.navigation__container')) {
-  console.log('yes')
   const nav = () => {
     if (!document.querySelector('.js-show-container')) {
       const element = document.querySelector('.navigation__icons');
