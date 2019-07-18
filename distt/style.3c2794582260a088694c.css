@@ -445,7 +445,7 @@ ORDER: base + typography > general layout + grid > page layout > components
 
 body {
   position: fixed;
-  background-color: #edfbf3;
+  background-color: #2bbe69;
   font-family: 'Lato', sans-serif;
   color: #0c341d;
   height: 100vh; }

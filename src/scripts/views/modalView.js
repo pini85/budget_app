@@ -7,4 +7,7 @@ if (document.querySelector('.index')) {
   document.querySelector('.js-desktop').addEventListener('click', () => {
     localStorage.setItem('mobile', false);
   });
+  document.querySelector('.modal__desktop-only').addEventListener('click',() => {
+    localStorage.setItem('mobile',false);
+  })
 };
