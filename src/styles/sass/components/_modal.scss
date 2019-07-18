@@ -16,6 +16,9 @@
         background-color: $color-background-dark;
         padding: 2rem;
         text-align: center;
+        @include respond(phone-large) {
+            width: 90%;
+        }
     }
     &__text {
         line-height: 150%;

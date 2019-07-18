@@ -1,5 +1,6 @@
 import * as local from '../data/localStorage.js';
 import * as faker from '../data/random.js';
+
 export const displayMonth = () => {
   const date = new Date();
   const dateMonth = date.getMonth() + 1;

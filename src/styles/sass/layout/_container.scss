@@ -36,10 +36,6 @@
     align-items: center;
     height: calc(100vh - 94px);
 
-    @include respond(phone-large) {
-      // height: calc(100vh - 58px)
-    }
-
     &--statistics {
       display: flex;
       flex-direction: column;

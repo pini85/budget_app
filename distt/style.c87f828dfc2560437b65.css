@@ -622,7 +622,8 @@ body {
     @media only screen and (max-width: 75em) {
       .item__container {
         width: 100%;
-        grid-row-gap: 2rem; } }
+        grid-row-gap: 2rem;
+        max-height: 100vh; } }
     .item__container-description {
       background-color: #f8faf9;
       display: grid;
@@ -855,6 +856,9 @@ button:hover, .button:hover {
     background-color: #edfbf3;
     padding: 2rem;
     text-align: center; }
+    @media only screen and (max-width: 37.5em) {
+      .modal__container {
+        width: 90%; } }
   .modal__text {
     line-height: 150%;
     font-size: 3rem; }
@@ -976,6 +980,8 @@ button:hover, .button:hover {
           animation-fill-mode: forwards; }
 
 .navigation__container.navigation__container-mobile-view {
+  top: 58px;
+  height: calc(100% - 58px);
   width: 55%; }
 
 .navigation__item.js-mobile,
@@ -987,6 +993,10 @@ button:hover, .button:hover {
   align-items: center;
   justify-content: center;
   font-size: 2.5rem; }
+  @media only screen and (max-width: 56.25em) {
+    .navigation__item.js-mobile,
+    .navigation__item.js-desktop {
+      display: none; } }
 
 .navigation__item.js-desktop {
   font-size: 3rem !important; }
@@ -1084,82 +1094,74 @@ button:hover, .button:hover {
 .container__body.container__body-mobile-view {
   height: 75.1vh; }
 
-.overview__icon {
-  font-size: 5rem;
-  color: #edfbf3; }
-
-.overview__graph {
-  height: 50%;
-  width: 50%; }
-
-.overview__overall {
-  font-size: 4rem;
-  font-weight: 600;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -150%);
-          transform: translate(-50%, -150%); }
-  .overview__overall--green {
-    color: #2bbe69; }
-  .overview__overall--red {
-    color: #e74c3c; }
-
-.overview__percentage {
-  font-size: 3rem;
-  font-weight: 500;
-  position: absolute;
-  left: 50%;
-  top: 60%;
-  -webkit-transform: translate(-50%, -150%);
-          transform: translate(-50%, -150%); }
-  .overview__percentage--green {
-    color: #70df9f; }
-  .overview__percentage--red {
-    color: #f4ada6; }
-
-.overview__graph-description {
-  display: inline-block;
-  position: relative;
-  right: -5vw;
-  down: 7px;
-  bottom: -31vh; }
-
-.overview__income {
-  font-size: 2rem;
-  font-weight: 300; }
-
-.overview__income::before {
-  content: "";
-  height: 2rem;
-  width: 2rem;
-  position: absolute;
-  left: -34%;
-  top: 12%;
-  background-color: #1e874b; }
-
-.overview__expenses {
-  font-size: 2rem;
-  font-weight: 300; }
-
-.overview__expenses::before {
-  content: "";
-  height: 2rem;
-  width: 2rem;
-  position: absolute;
-  left: -34%;
-  top: 61%;
-  background-color: #FF0000; }
-
-.overview__no-value {
-  font-size: 4rem;
-  font-weight: lighter;
-  text-align: center; }
-
-.overview__options {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+.overview {
+  width: 100vw; }
+  .overview__icon {
+    font-size: 5rem;
+    color: #edfbf3; }
+  .overview__graph {
+    height: 50%;
+    width: 50%; }
+  .overview__overall {
+    font-size: 4rem;
+    font-weight: 600;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -150%);
+            transform: translate(-50%, -150%); }
+    .overview__overall--green {
+      color: #2bbe69; }
+    .overview__overall--red {
+      color: #e74c3c; }
+  .overview__percentage {
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    -webkit-transform: translate(-50%, -150%);
+            transform: translate(-50%, -150%); }
+    .overview__percentage--green {
+      color: #70df9f; }
+    .overview__percentage--red {
+      color: #f4ada6; }
+  .overview__graph-description {
+    display: inline-block;
+    position: relative;
+    right: -5vw;
+    down: 7px;
+    bottom: -31vh; }
+  .overview__income {
+    font-size: 2rem;
+    font-weight: 300; }
+  .overview__income::before {
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    left: -34%;
+    top: 12%;
+    background-color: #1e874b; }
+  .overview__expenses {
+    font-size: 2rem;
+    font-weight: 300; }
+  .overview__expenses::before {
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    left: -34%;
+    top: 61%;
+    background-color: #FF0000; }
+  .overview__no-value {
+    font-size: 4rem;
+    font-weight: lighter;
+    text-align: center; }
+  .overview__options {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 .message-income {
   opacity: 0;
