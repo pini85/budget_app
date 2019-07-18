@@ -31,6 +31,8 @@ if (localStorage.getItem('mobile') === 'true' && !document.querySelector('body')
   // html//
   document.querySelector('html').classList.add('html-mobile-view');
 
+//modal//
+
 
   // container//
   if (document.querySelector('.container')) {
