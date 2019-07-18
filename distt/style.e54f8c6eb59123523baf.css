@@ -445,7 +445,7 @@ ORDER: base + typography > general layout + grid > page layout > components
 
 body {
   position: fixed;
-  background-color: #2bbe69;
+  background-color: #edfbf3;
   font-family: 'Lato', sans-serif;
   color: #0c341d;
   height: 100vh; }
@@ -927,6 +927,7 @@ button:hover, .button:hover {
       height: 100%;
       background-color: red; }
   .navigation__ul {
+    text-decoration: none;
     height: calc(100vh - 115px);
     display: flex;
     flex-direction: column;
