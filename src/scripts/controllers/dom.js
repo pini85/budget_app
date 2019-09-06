@@ -53,6 +53,7 @@ document.onreadystatechange = function () {
     const body = d.getElementsByTagName('body')[0];
     const bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
     document.body.style.height = `${bodyHeight}px`;
+    console.log(bodyHeight);
   }
 };
 
