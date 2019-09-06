@@ -1,5 +1,5 @@
 .container {
-  height: 100vh;
+  // height: 100vh;
   width: 100%;
   grid-template-rows: 94px 1fr; //fixed height for header so it will correspond to the nav containers height.
   grid-template-columns: repeat(3, 1fr);
