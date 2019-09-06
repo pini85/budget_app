@@ -54,12 +54,25 @@ if (document.querySelector('.navigation__container')) {
       const bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
       document.body.style.height = `${bodyHeight}px`;
       if (!!window.chrome) {
-     
         document.querySelector('.container__body').style.height=`calc(${bodyHeight}px - 58px)`;
+        //disable scroll
+        document.addEventListener('touchstart', this.touchstart);
+        document.addEventListener('touchmove', this.touchmove);
+        
+        function touchstart(e) {
+            e.preventDefault()
+        }
+        
+        function touchmove(e) {
+            e.preventDefault()
+        }
+        touchstart();
+        touchmove();
       }
       console.log(bodyHeight);
     }
   };
+ 
 
   // height: calc(100vh - 94px);
 // Add the Web Share API
