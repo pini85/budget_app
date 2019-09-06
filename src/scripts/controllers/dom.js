@@ -57,7 +57,7 @@ if (document.querySelector('.navigation__container')) {
         
       } 
       var isChromium = !!window.chrome;
-      // document.querySelector('.container__body').style.height=`calc(${bodyHeight}px - 58px)`;
+      document.querySelector('.container__body').style.height=`calc(${bodyHeight}px - 94px)`;
       console.log(bodyHeight);
     }
   };
