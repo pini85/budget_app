@@ -34,7 +34,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // height: calc(100vh - 94px);
+    height: calc(100vh - 94px);
+
+    @media only screen and (max-width: 600px) {
+      height: calc(100vh - 58px);
+
+
+    }
 
     
 
