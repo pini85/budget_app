@@ -54,10 +54,9 @@ if (document.querySelector('.navigation__container')) {
       const bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
       document.body.style.height = `${bodyHeight}px`;
       if (!!window.chrome) {
-        
-      } 
-      var isChromium = !!window.chrome;
-      document.querySelector('.container__body').style.height=`calc(${bodyHeight}px - 58px)`;
+     
+        document.querySelector('.container__body').style.height=`calc(${bodyHeight}px - 58px)`;
+      }
       console.log(bodyHeight);
     }
   };
