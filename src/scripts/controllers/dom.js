@@ -45,17 +45,17 @@ if (document.querySelector('.navigation__container')) {
 
 // Fixes the Chrome mobile nav problem//
 // Identifies how tall is the window and makes the body height that size
-// document.onreadystatechange = function () {
-//   if (document.readyState == 'complete') {
-//     const w = window;
-//     const d = document;
-//     const e = d.documentElement;
-//     const body = d.getElementsByTagName('body')[0];
-//     const bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
-//     document.body.style.height = `${bodyHeight}px`;
-//     console.log(bodyHeight);
-//   }
-// };
+  // document.onreadystatechange = function () {
+  //   if (document.readyState == 'complete') {
+  //     const w = window;
+  //     const d = document;
+  //     const e = d.documentElement;
+  //     const body = d.getElementsByTagName('body')[0];
+  //     const bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
+  //     document.body.style.height = `${bodyHeight}px`;
+  //     console.log(bodyHeight);
+  //   }
+  // };
 
 
 // Add the Web Share API
