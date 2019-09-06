@@ -1,3 +1,9 @@
+const bodyScrollLock = require('body-scroll-lock');
+const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+
+disableBodyScroll(document.getElementsByTagName("BODY")[0]);
+ 
+
 // Chrome mobile nav bar fix//
 
 // const chrome = () => {
