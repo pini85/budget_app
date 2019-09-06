@@ -53,11 +53,12 @@ if (document.querySelector('.navigation__container')) {
       const body = d.getElementsByTagName('body')[0];
       const bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
       document.body.style.height = `${bodyHeight}px`;
+      document.querySelector('.container__body').style.height=`calc(${bodyHeight}px - 58px)`;
       console.log(bodyHeight);
     }
   };
 
-
+  // height: calc(100vh - 94px);
 // Add the Web Share API
 
 if (document.querySelector('.share-button')) {
