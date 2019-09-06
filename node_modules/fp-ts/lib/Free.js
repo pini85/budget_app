@@ -27,6 +27,7 @@ var Pure = /** @class */ (function () {
         return this.toString();
     };
     Pure.prototype.toString = function () {
+        // tslint:disable-next-line: deprecation
         return "new Pure(" + function_1.toString(this.value) + ")";
     };
     Pure.prototype.isPure = function () {
@@ -63,6 +64,7 @@ var Impure = /** @class */ (function () {
         return this.toString();
     };
     Impure.prototype.toString = function () {
+        // tslint:disable-next-line: deprecation
         return "new Impure(" + (function_1.toString(this.fx), function_1.toString(this.f)) + ")";
     };
     Impure.prototype.isPure = function () {
