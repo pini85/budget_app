@@ -60,8 +60,8 @@ if (document.querySelector('.navigation__container')) {
       const body = d.getElementsByTagName('body')[0];
       const bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
       document.body.style.height = `${bodyHeight}px`;
-      const mq = window.matchMedia( "(min-width: 600px)" );
-      if (!!window.chrome && mq.matchess) {
+      const mq = window.matchMedia( "(max-width: 600px)" );
+      if (!!window.chrome && mq.matches) {
         console.log('hi')
         document.querySelector('.container__body').style.height=`calc(${bodyHeight}px - 58px)`;
       
