@@ -1,21 +1,4 @@
-const bodyScrollLock = require('body-scroll-lock');
-const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 
-disableBodyScroll(document.getElementsByTagName("BODY")[0]);
-disableBodyScroll(document.getElementsByTagName("HTML")[0]);
- 
-
-// Chrome mobile nav bar fix//
-
-// const chrome = () => {
-// const isChromium = !!window.chrome;
-//   if (isChromium &&  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && document.querySelector('.container')) {
-//   // document.querySelector('.container').style.maxHeight="calc(100vh - 104px)";
-//     // document.querySelector('.container').style.maxHeight = 'calc(100vh - 60px)';
-//     // document.body.style.position = 'fixed';
-//   }
-// };
-// chrome();
 // Navigation animation//
 if (document.querySelector('.navigation__container')) {
   const nav = () => {
@@ -61,6 +44,7 @@ if (document.querySelector('.navigation__container')) {
       const bodyHeight = w.innerHeight || e.clientHeight || body.clientHeight;
       document.body.style.height = `${bodyHeight}px`;
       const mq = window.matchMedia( "(max-width: 600px)" );
+      //only for mobile and chrome
       if (!!window.chrome && mq.matches) {
         console.log('hi')
         document.querySelector('.container__body').style.height=`calc(${bodyHeight}px - 58px)`;
@@ -69,9 +53,7 @@ if (document.querySelector('.navigation__container')) {
     }
   };
 }
- 
 
-  // height: calc(100vh - 94px);
 // Add the Web Share API
 
 if (document.querySelector('.share-button')) {

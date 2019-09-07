@@ -79,8 +79,19 @@ if (localStorage.getItem('mobile') === 'true' && !document.querySelector('body')
 
 
   // Styles//
+  const mqw = window.matchMedia( "(max-width: 1200px)" );
+  const mqh = window.matchMedia("(max-height:610px)");
+  if(mqw.matches && mqh.matches) {
+    document.querySelector('html').style.fontSize = '28%';
+    document.querySelector('.btn--expense').style.marginBottom = '2rem';
 
-  document.querySelector('html').style.fontSize = '43%';
+  } else {
+    document.querySelector('html').style.fontSize = '38%';
+
+  }
+    
+
+  // document.querySelector('html').style.fontSize = '43%';
   if (document.querySelector('.chart-container')) {
     document.querySelector('.chart-container').style.width = '49vh';
   }
